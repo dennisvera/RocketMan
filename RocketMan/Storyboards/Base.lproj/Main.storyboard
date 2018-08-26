@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lcG-1D-aRO">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="vue-1e-qJR">
+            <objects>
+                <viewController id="lcG-1D-aRO" customClass="RootViewController" customModule="RocketMan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9bh-Q9-yaf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpt-UT-fPP" userLabel="SpaceMan Logo View">
+                                <rect key="frame" x="0.0" y="44" width="375" height="270"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROCKETMAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFN-pd-eAR">
+                                        <rect key="frame" x="20" y="110.66666666666666" width="335" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8tH-py-4Bd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                                        <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="Cim-yI-Ozf"/>
+                                    <constraint firstAttribute="trailing" secondItem="iFN-pd-eAR" secondAttribute="trailing" constant="20" id="YAZ-UZ-2II"/>
+                                    <constraint firstItem="iFN-pd-eAR" firstAttribute="centerY" secondItem="cpt-UT-fPP" secondAttribute="centerY" id="c7s-KD-bId"/>
+                                    <constraint firstItem="iFN-pd-eAR" firstAttribute="leading" secondItem="cpt-UT-fPP" secondAttribute="leading" constant="20" id="n4D-Qn-hmG"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sS6-qy-wsb">
+                                <rect key="frame" x="0.0" y="314" width="375" height="259"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="OCg-C8-DSm">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OCg-C8-DSm" id="mIG-Ew-A2U">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffr-Mh-bSv">
+                                <rect key="frame" x="60" y="658" width="255" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Qb6-uD-365"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wk7-AP-cSu" firstAttribute="trailing" secondItem="cpt-UT-fPP" secondAttribute="trailing" id="3oU-yp-tWQ"/>
+                            <constraint firstItem="Ffr-Mh-bSv" firstAttribute="leading" secondItem="wk7-AP-cSu" secondAttribute="leading" constant="60" id="ByV-2B-Kkg"/>
+                            <constraint firstItem="wk7-AP-cSu" firstAttribute="trailing" secondItem="Ffr-Mh-bSv" secondAttribute="trailing" constant="60" id="H1x-90-gJ9"/>
+                            <constraint firstItem="wk7-AP-cSu" firstAttribute="trailing" secondItem="sS6-qy-wsb" secondAttribute="trailing" id="P0j-hI-cxJ"/>
+                            <constraint firstItem="sS6-qy-wsb" firstAttribute="top" secondItem="cpt-UT-fPP" secondAttribute="bottom" id="Pcc-fw-3FM"/>
+                            <constraint firstItem="Ffr-Mh-bSv" firstAttribute="top" secondItem="sS6-qy-wsb" secondAttribute="bottom" constant="85" id="Pqn-24-6Aw"/>
+                            <constraint firstItem="cpt-UT-fPP" firstAttribute="top" secondItem="wk7-AP-cSu" secondAttribute="top" id="UQI-yB-3BK"/>
+                            <constraint firstItem="cpt-UT-fPP" firstAttribute="leading" secondItem="wk7-AP-cSu" secondAttribute="leading" id="ckP-BI-wZT"/>
+                            <constraint firstItem="wk7-AP-cSu" firstAttribute="bottom" secondItem="Ffr-Mh-bSv" secondAttribute="bottom" constant="60" id="dkp-fM-gNa"/>
+                            <constraint firstItem="sS6-qy-wsb" firstAttribute="leading" secondItem="wk7-AP-cSu" secondAttribute="leading" id="omX-8V-TyL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wk7-AP-cSu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kr2-Fh-gCv" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="414" y="166"/>
+        </scene>
+    </scenes>
+</document>
