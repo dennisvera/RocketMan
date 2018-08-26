@@ -14,6 +14,8 @@
 		E10A0EFB21333A7F000AD1C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10A0EF921333A7F000AD1C1 /* LaunchScreen.storyboard */; };
 		E10A0F0921333B8A000AD1C1 /* ReachClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F0821333B8A000AD1C1 /* ReachClient.swift */; };
 		E10A0F0C21333BD5000AD1C1 /* ReachDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F0B21333BD5000AD1C1 /* ReachDataStore.swift */; };
+		E10A0F12213348D6000AD1C1 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F11213348D6000AD1C1 /* SettingsTableViewCell.swift */; };
+		E10A0F15213359A1000AD1C1 /* RocketMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F14213359A1000AD1C1 /* RocketMan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		E10A0EFC21333A7F000AD1C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E10A0F0821333B8A000AD1C1 /* ReachClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachClient.swift; sourceTree = "<group>"; };
 		E10A0F0B21333BD5000AD1C1 /* ReachDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachDataStore.swift; sourceTree = "<group>"; };
+		E10A0F11213348D6000AD1C1 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		E10A0F14213359A1000AD1C1 /* RocketMan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketMan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 				E10A0F0221333AA4000AD1C1 /* Application Delegate */,
 				E10A0F0721333B57000AD1C1 /* Network Managers */,
 				E10A0F0A21333BBA000AD1C1 /* Data Managers */,
+				E10A0F1321335978000AD1C1 /* Models */,
 				E10A0F0321333AE8000AD1C1 /* View Controllers */,
 				E10A0F0421333AF4000AD1C1 /* Storyboards */,
 				E10A0F0521333B12000AD1C1 /* Resources */,
@@ -80,7 +85,7 @@
 		E10A0F0321333AE8000AD1C1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E10A0EF221333A75000AD1C1 /* RootViewController.swift */,
+				E10A0F0D213346EA000AD1C1 /* Root View Controller */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -124,6 +129,31 @@
 				E10A0F0B21333BD5000AD1C1 /* ReachDataStore.swift */,
 			);
 			path = "Data Managers";
+			sourceTree = "<group>";
+		};
+		E10A0F0D213346EA000AD1C1 /* Root View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E10A0EF221333A75000AD1C1 /* RootViewController.swift */,
+				E10A0F0E21334704000AD1C1 /* Settings Table View Cells */,
+			);
+			path = "Root View Controller";
+			sourceTree = "<group>";
+		};
+		E10A0F0E21334704000AD1C1 /* Settings Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E10A0F11213348D6000AD1C1 /* SettingsTableViewCell.swift */,
+			);
+			path = "Settings Table View Cells";
+			sourceTree = "<group>";
+		};
+		E10A0F1321335978000AD1C1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E10A0F14213359A1000AD1C1 /* RocketMan.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +230,8 @@
 				E10A0EF321333A75000AD1C1 /* RootViewController.swift in Sources */,
 				E10A0F0C21333BD5000AD1C1 /* ReachDataStore.swift in Sources */,
 				E10A0F0921333B8A000AD1C1 /* ReachClient.swift in Sources */,
+				E10A0F12213348D6000AD1C1 /* SettingsTableViewCell.swift in Sources */,
+				E10A0F15213359A1000AD1C1 /* RocketMan.swift in Sources */,
 				E10A0EF121333A75000AD1C1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
