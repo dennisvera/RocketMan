@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game Settings View Controller-->
+        <!--Game Settings-->
         <scene sceneID="vue-1e-qJR">
             <objects>
                 <viewController id="lcG-1D-aRO" customClass="GameSettingsViewController" customModule="RocketMan" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,14 +120,30 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wk7-AP-cSu"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MaY-Y4-6Ol"/>
+                    <navigationItem key="navigationItem" title="Game Settings" id="2jk-0r-bE2" userLabel="Game Settings"/>
                     <connections>
                         <outlet property="tableView" destination="sS6-qy-wsb" id="M7f-Jp-n3s"/>
+                        <segue destination="Gl2-zz-PJE" kind="show" identifier="GameViewController" id="jB1-50-WVE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kr2-Fh-gCv" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1356" y="165.51724137931035"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="3jH-0c-pGq">
+            <objects>
+                <viewController id="Gl2-zz-PJE" customClass="GameViewController" customModule="RocketMan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jdz-Qc-t9e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="KEm-qb-Txx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ohd-BJ-xIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2098" y="166"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9GL-Y9-hGR">

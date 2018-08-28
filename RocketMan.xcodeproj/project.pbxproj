@@ -16,6 +16,7 @@
 		E10A0F0C21333BD5000AD1C1 /* RocketMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F0B21333BD5000AD1C1 /* RocketMan.swift */; };
 		E10A0F12213348D6000AD1C1 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F11213348D6000AD1C1 /* SettingsTableViewCell.swift */; };
 		E1CEC6DC21349D7B00B32341 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC6DB21349D7B00B32341 /* Game.swift */; };
+		E1CEC6DF2135BED400B32341 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC6DE2135BED400B32341 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E10A0F0B21333BD5000AD1C1 /* RocketMan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketMan.swift; sourceTree = "<group>"; };
 		E10A0F11213348D6000AD1C1 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		E1CEC6DB21349D7B00B32341 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E1CEC6DE2135BED400B32341 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				E10A0F0D213346EA000AD1C1 /* Game Settings View Controller */,
+				E1CEC6DD2135BE9A00B32341 /* Game View Controller */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -146,6 +149,14 @@
 				E1CEC6DB21349D7B00B32341 /* Game.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E1CEC6DD2135BE9A00B32341 /* Game View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1CEC6DE2135BED400B32341 /* GameViewController.swift */,
+			);
+			path = "Game View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 				E10A0F12213348D6000AD1C1 /* SettingsTableViewCell.swift in Sources */,
 				E10A0EF121333A75000AD1C1 /* AppDelegate.swift in Sources */,
 				E1CEC6DC21349D7B00B32341 /* Game.swift in Sources */,
+				E1CEC6DF2135BED400B32341 /* GameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

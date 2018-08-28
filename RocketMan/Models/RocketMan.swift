@@ -10,6 +10,19 @@ import Foundation
 
 class RocketMan: NSObject {
     
+    // MARK: - Enums
+    
+    enum GameError : Error {
+        case noCurrentGame
+        case invalidDictionaryURL
+    }
+    
+    enum URLError {
+        case noWord
+        case noResponse
+        case waiting
+    }
+
     // MARK: - Type Instance
     
     static let sharedInstance = RocketMan()
@@ -46,24 +59,67 @@ class RocketMan: NSObject {
         let wordMaxLength = String(self.wordMaxLength + 1)
         
         // Fetch Reach API Client
-        ReachClient.fetchReachData(difficulty: difficulty, wordMinLength: wordMinLength, wordMaxLength: wordMaxLength) { (word) in
+        ReachClient.fetchReachData(difficulty: difficulty, wordMinLength: wordMinLength, wordMaxLength: wordMaxLength) { (selectedGameWord) in
 //            print(self.guessMaximum)
 //            print(self.difficulty)
 //            print(self.wordMinLength)
 //            print(self.wordMaxLength)
 
-            if word != "" {
-                print(word)
-                self.startGame(word, self.difficulty)
+            if selectedGameWord != "" {
+                print(selectedGameWord)
+                self.startGame(selectedGameWord, self.difficulty)
             }
         }
     }
     
+    // MARK: - Returns True if Game is Over, Otherwise False
     
-    // MARK: - Helper Method Creates Current Game With Given Word and Max Number of Guesses
+    func isGameOver() -> Bool {
+        if let game = currentGame {
+            return game.gameOver
+        }
+        
+        return false
+    }
+    
+    // MARK: - Returns True if Current Game is On, Otherwise False
+    
+    func hasGame() -> Bool {
+        return currentGame != nil
+    }
+    
+    // MARK: - Clear Current Game
+    
+    func clearGame() {
+        currentGame = nil
+    }
+    
+    // MARK: - Returns Number of Guesses Remaining
+    
+    func remainingGuesses() -> Int {
+        return currentGame!.guessMaximum - currentGame!.incorrectGuessNumber
+    }
+    
+    // MARK: - Returns Fraction Number of Guesses Remaining
+    
+    func remainingGuessesRatio() -> Double {
+        return Double(currentGame!.incorrectGuessNumber) / Double(currentGame!.guessMaximum)
+    }
+    
+    // MARK: - Creates Current Game With Given Word and Max Number of Guesses
     
     private func startGame(_ word: String, _ difficulty: Int) {
-        currentGame = Game(word: word, guessMax: guessMaximum, difficulty: difficulty)
+        currentGame = Game(word: word, guessMaximum: guessMaximum, difficulty: difficulty)
+    }
+    
+    // MARK: - Submits letter guess to the current game. Returns a Game.GameOutcome option based on the outcome of the guess. If no current game is set, throws an error
+    
+    func guessLetter(_ guess: Character) throws -> Game.GameOutcome {
+        if let outcome = currentGame?.guessLetter(guess) {
+            return outcome
+        }
+        
+        throw GameError.noCurrentGame
     }
     
 }

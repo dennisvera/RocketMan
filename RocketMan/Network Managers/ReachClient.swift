@@ -34,15 +34,17 @@ class ReachClient {
             if let error = error {
                 print("Unable To Fetch Reach Data: \(error)\n")
             } else {
-                guard let data = data else { fatalError("Unable to get data: \(String(describing: error?.localizedDescription))") }
-                
-                let reachData = String(decoding: data, as: UTF8.self)
-                let wordArray = reachData.components(separatedBy: CharacterSet.newlines)
-                let index = Int(arc4random_uniform(UInt32(wordArray.count)))
-                let word = wordArray[index]
-                
-                if word != "" {
-                    completionHandler(word)
+                DispatchQueue.global(qos: .background).async {
+                    guard let data = data else { fatalError("Unable to get data: \(String(describing: error?.localizedDescription))") }
+                    
+                    let reachData = String(decoding: data, as: UTF8.self)
+                    let reachDataWords = reachData.components(separatedBy: CharacterSet.newlines)
+                    let index = Int(arc4random_uniform(UInt32(reachDataWords.count)))
+                    let selectedGameWord = reachDataWords[index]
+                    
+                    if selectedGameWord != "" {
+                        completionHandler(selectedGameWord)
+                    }
                 }
             }
         }

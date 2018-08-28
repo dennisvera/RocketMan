@@ -10,7 +10,7 @@ import UIKit
 
 final class GameSettingsViewController: UIViewController {
     
-    // MARK: - Outlets
+    // MARK: varutlets
     
     @IBOutlet var tableView: UITableView!
     
@@ -45,10 +45,21 @@ final class GameSettingsViewController: UIViewController {
     // MARK: - Helper Method
     
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GameViewController" {
+            let destination = segue.destination as! GameViewController
+            destination.rocketMan = rocketMan
+        }
+    }
+        
     // MARK: - Actions
     
     @IBAction func playButtonTapped(_ sender: Any) {
         rocketMan.fetchRocketManWord()
+        
+        performSegue(withIdentifier: "GameViewController", sender: self)
     }
     
 }
