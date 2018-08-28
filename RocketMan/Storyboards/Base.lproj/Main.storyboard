@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game Root View Controller-->
+        <!--Game Settings View Controller-->
         <scene sceneID="vue-1e-qJR">
             <objects>
-                <viewController id="lcG-1D-aRO" customClass="GameRootViewController" customModule="RocketMan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lcG-1D-aRO" customClass="GameSettingsViewController" customModule="RocketMan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9bh-Q9-yaf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

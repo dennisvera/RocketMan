@@ -1,5 +1,5 @@
 //
-//  GameRootViewController.swift
+//  GameSettingsViewController.swift
 //  RocketMan
 //
 //  Created by Dennis Vera on 8/26/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class GameRootViewController: UIViewController {
+final class GameSettingsViewController: UIViewController {
     
     // MARK: - Outlets
     
@@ -49,15 +49,13 @@ final class GameRootViewController: UIViewController {
     
     @IBAction func playButtonTapped(_ sender: Any) {
         rocketMan.fetchRocketManWord()
-        
-        print("Button Pressed \n\n\n\n")
     }
     
 }
 
 // MARK: - UITableView Data Source
 
-extension GameRootViewController: UITableViewDataSource {
+extension GameSettingsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -164,6 +162,7 @@ extension GameRootViewController: UITableViewDataSource {
         guessMaximumLabel.text = String(newGuessMaximumValue)
         rocketMan.guessMaximum = newGuessMaximumValue
     }
+    
     
 }
 

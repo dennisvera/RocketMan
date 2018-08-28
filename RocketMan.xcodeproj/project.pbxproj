@@ -8,21 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		E10A0EF121333A75000AD1C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0EF021333A75000AD1C1 /* AppDelegate.swift */; };
-		E10A0EF321333A75000AD1C1 /* GameRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0EF221333A75000AD1C1 /* GameRootViewController.swift */; };
+		E10A0EF321333A75000AD1C1 /* GameSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0EF221333A75000AD1C1 /* GameSettingsViewController.swift */; };
 		E10A0EF621333A75000AD1C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10A0EF421333A75000AD1C1 /* Main.storyboard */; };
 		E10A0EF821333A7F000AD1C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10A0EF721333A7F000AD1C1 /* Assets.xcassets */; };
 		E10A0EFB21333A7F000AD1C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10A0EF921333A7F000AD1C1 /* LaunchScreen.storyboard */; };
 		E10A0F0921333B8A000AD1C1 /* ReachClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F0821333B8A000AD1C1 /* ReachClient.swift */; };
 		E10A0F0C21333BD5000AD1C1 /* RocketMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F0B21333BD5000AD1C1 /* RocketMan.swift */; };
 		E10A0F12213348D6000AD1C1 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F11213348D6000AD1C1 /* SettingsTableViewCell.swift */; };
-		E10A0F18213370AA000AD1C1 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F17213370AA000AD1C1 /* GameViewModel.swift */; };
 		E1CEC6DC21349D7B00B32341 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC6DB21349D7B00B32341 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E10A0EED21333A75000AD1C1 /* RocketMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10A0EF021333A75000AD1C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E10A0EF221333A75000AD1C1 /* GameRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRootViewController.swift; sourceTree = "<group>"; };
+		E10A0EF221333A75000AD1C1 /* GameSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsViewController.swift; sourceTree = "<group>"; };
 		E10A0EF521333A75000AD1C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E10A0EF721333A7F000AD1C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E10A0EFA21333A7F000AD1C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,7 +29,6 @@
 		E10A0F0821333B8A000AD1C1 /* ReachClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachClient.swift; sourceTree = "<group>"; };
 		E10A0F0B21333BD5000AD1C1 /* RocketMan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketMan.swift; sourceTree = "<group>"; };
 		E10A0F11213348D6000AD1C1 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		E10A0F17213370AA000AD1C1 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		E1CEC6DB21349D7B00B32341 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +84,7 @@
 		E10A0F0321333AE8000AD1C1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E10A0F0D213346EA000AD1C1 /* Game Root View Controller */,
+				E10A0F0D213346EA000AD1C1 /* Game Settings View Controller */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -124,14 +122,13 @@
 			path = "Network Managers";
 			sourceTree = "<group>";
 		};
-		E10A0F0D213346EA000AD1C1 /* Game Root View Controller */ = {
+		E10A0F0D213346EA000AD1C1 /* Game Settings View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E10A0EF221333A75000AD1C1 /* GameRootViewController.swift */,
-				E10A0F162133703C000AD1C1 /* View Models */,
+				E10A0EF221333A75000AD1C1 /* GameSettingsViewController.swift */,
 				E10A0F0E21334704000AD1C1 /* Settings Table View Cells */,
 			);
-			path = "Game Root View Controller";
+			path = "Game Settings View Controller";
 			sourceTree = "<group>";
 		};
 		E10A0F0E21334704000AD1C1 /* Settings Table View Cells */ = {
@@ -149,14 +146,6 @@
 				E1CEC6DB21349D7B00B32341 /* Game.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		E10A0F162133703C000AD1C1 /* View Models */ = {
-			isa = PBXGroup;
-			children = (
-				E10A0F17213370AA000AD1C1 /* GameViewModel.swift */,
-			);
-			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,12 +219,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E10A0EF321333A75000AD1C1 /* GameRootViewController.swift in Sources */,
+				E10A0EF321333A75000AD1C1 /* GameSettingsViewController.swift in Sources */,
 				E10A0F0C21333BD5000AD1C1 /* RocketMan.swift in Sources */,
 				E10A0F0921333B8A000AD1C1 /* ReachClient.swift in Sources */,
 				E10A0F12213348D6000AD1C1 /* SettingsTableViewCell.swift in Sources */,
 				E10A0EF121333A75000AD1C1 /* AppDelegate.swift in Sources */,
-				E10A0F18213370AA000AD1C1 /* GameViewModel.swift in Sources */,
 				E1CEC6DC21349D7B00B32341 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
