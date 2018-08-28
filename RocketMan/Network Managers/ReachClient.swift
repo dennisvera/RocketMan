@@ -10,12 +10,14 @@ import Foundation
 
 class ReachClient {
     
-    typealias ReachData = [String]
+    // MARK: - Types
+    
+    typealias ReachData = String
     
     // MARK: - Requesting Data
     
-    class func fetchReachData(completionHandler: @escaping (ReachData) -> ()) {
-        let urlString = "http://app.linkedin-reach.io/words?difficulty=8"
+    class func fetchReachData(difficulty: String, wordMinLength: String, wordMaxLength: String, completionHandler: @escaping (ReachData) -> ()) {
+        let urlString = "http://app.linkedin-reach.io/words?difficulty=\(difficulty)&minLength=\(wordMinLength)&maxLength=\(wordMaxLength)"
         
         guard let url = URL(string: urlString) else { fatalError("Invalid URL") }
         
@@ -35,7 +37,13 @@ class ReachClient {
                 guard let data = data else { fatalError("Unable to get data: \(String(describing: error?.localizedDescription))") }
                 
                 let reachData = String(decoding: data, as: UTF8.self)
-                completionHandler([reachData])
+                let wordArray = reachData.components(separatedBy: CharacterSet.newlines)
+                let index = Int(arc4random_uniform(UInt32(wordArray.count)))
+                let word = wordArray[index]
+                
+                if word != "" {
+                    completionHandler(word)
+                }
             }
         }
         

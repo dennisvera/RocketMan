@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Game Root View Controller-->
         <scene sceneID="vue-1e-qJR">
             <objects>
-                <viewController id="lcG-1D-aRO" customClass="RootViewController" customModule="RocketMan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lcG-1D-aRO" customClass="GameRootViewController" customModule="RocketMan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9bh-Q9-yaf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sS6-qy-wsb">
-                                <rect key="frame" x="0.0" y="358" width="375" height="215"/>
+                                <rect key="frame" x="0.0" y="358" width="375" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsTableViewCell" rowHeight="60" id="OCg-C8-DSm" customClass="SettingsTableViewCell" customModule="RocketMan" customModuleProvider="target">
@@ -53,13 +53,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="8nE-uA-AgO" userLabel="Settings Stack View">
                                                     <rect key="frame" x="10" y="0.0" width="355" height="59.666666666666664"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDc-s3-Bxb" userLabel="Title Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDc-s3-Bxb" userLabel="Title Label">
                                                             <rect key="frame" x="0.0" y="18.666666666666664" width="221.66666666666666" height="22.666666666666664"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3R-4i-GFd">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3R-4i-GFd">
                                                             <rect key="frame" x="235.66666666666666" y="18.333333333333336" width="11.333333333333343" height="23.333333333333336"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                             <nil key="textColor"/>
@@ -112,7 +112,7 @@
                             <constraint firstItem="wk7-AP-cSu" firstAttribute="trailing" secondItem="Ffr-Mh-bSv" secondAttribute="trailing" constant="60" id="H1x-90-gJ9"/>
                             <constraint firstItem="wk7-AP-cSu" firstAttribute="trailing" secondItem="sS6-qy-wsb" secondAttribute="trailing" id="P0j-hI-cxJ"/>
                             <constraint firstItem="sS6-qy-wsb" firstAttribute="top" secondItem="cpt-UT-fPP" secondAttribute="bottom" id="Pcc-fw-3FM"/>
-                            <constraint firstItem="Ffr-Mh-bSv" firstAttribute="top" secondItem="sS6-qy-wsb" secondAttribute="bottom" constant="85" id="Pqn-24-6Aw"/>
+                            <constraint firstItem="Ffr-Mh-bSv" firstAttribute="top" secondItem="sS6-qy-wsb" secondAttribute="bottom" constant="60" id="Pqn-24-6Aw"/>
                             <constraint firstItem="cpt-UT-fPP" firstAttribute="top" secondItem="wk7-AP-cSu" secondAttribute="top" id="UQI-yB-3BK"/>
                             <constraint firstItem="cpt-UT-fPP" firstAttribute="leading" secondItem="wk7-AP-cSu" secondAttribute="leading" id="ckP-BI-wZT"/>
                             <constraint firstItem="wk7-AP-cSu" firstAttribute="bottom" secondItem="Ffr-Mh-bSv" secondAttribute="bottom" constant="60" id="dkp-fM-gNa"/>
