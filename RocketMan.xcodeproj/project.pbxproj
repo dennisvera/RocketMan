@@ -19,6 +19,7 @@
 		E1CEC6DF2135BED400B32341 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC6DE2135BED400B32341 /* GameViewController.swift */; };
 		E1CEC6E2213618B200B32341 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC6E1213618B200B32341 /* KeyboardView.swift */; };
 		E1CEC6E42136190200B32341 /* KeyBoardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC6E32136190200B32341 /* KeyBoardButton.swift */; };
+		E1CEC6E72136DA0E00B32341 /* GameWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC6E62136DA0E00B32341 /* GameWordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E1CEC6DE2135BED400B32341 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E1CEC6E1213618B200B32341 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		E1CEC6E32136190200B32341 /* KeyBoardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardButton.swift; sourceTree = "<group>"; };
+		E1CEC6E62136DA0E00B32341 /* GameWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			children = (
 				E1CEC6DE2135BED400B32341 /* GameViewController.swift */,
 				E1CEC6E02136189300B32341 /* Keyboard View */,
+				E1CEC6E52136D9EB00B32341 /* Game Word View */,
 			);
 			path = "Game View Controller";
 			sourceTree = "<group>";
@@ -171,6 +174,14 @@
 				E1CEC6E32136190200B32341 /* KeyBoardButton.swift */,
 			);
 			path = "Keyboard View";
+			sourceTree = "<group>";
+		};
+		E1CEC6E52136D9EB00B32341 /* Game Word View */ = {
+			isa = PBXGroup;
+			children = (
+				E1CEC6E62136DA0E00B32341 /* GameWordView.swift */,
+			);
+			path = "Game Word View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 				E10A0F12213348D6000AD1C1 /* SettingsTableViewCell.swift in Sources */,
 				E10A0EF121333A75000AD1C1 /* AppDelegate.swift in Sources */,
 				E1CEC6DC21349D7B00B32341 /* Game.swift in Sources */,
+				E1CEC6E72136DA0E00B32341 /* GameWordView.swift in Sources */,
 				E1CEC6DF2135BED400B32341 /* GameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

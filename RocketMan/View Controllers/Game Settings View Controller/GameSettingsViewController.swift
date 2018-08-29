@@ -10,16 +10,14 @@ import UIKit
 
 final class GameSettingsViewController: UIViewController {
     
-    // MARK: varutlets
+    // MARK: Outlets
     
     @IBOutlet var tableView: UITableView!
-    
-    // MARK: - Type Instance
-    
-    let rocketMan = RocketMan.sharedInstance
-    
+
     // MARK: - Properties
     
+    let rocketMan = RocketMan.sharedInstance
+
     var difficultyLabel: UILabel!
     var difficultyStepper: UIStepper!
     var wordMinLengthLabel: UILabel!
@@ -40,10 +38,8 @@ final class GameSettingsViewController: UIViewController {
     // MARK: - View Methods
     
     private func setupView() {
+
     }
-    
-    // MARK: - Helper Method
-    
     
     // MARK: - Navigation
     
@@ -52,12 +48,33 @@ final class GameSettingsViewController: UIViewController {
             let destination = segue.destination as! GameViewController
             destination.rocketMan = rocketMan
         }
+        
+//        RocketMan.saveRocketMan(rocketMan: rocketMan)
     }
         
     // MARK: - Actions
     
     @IBAction func playButtonTapped(_ sender: Any) {
-        rocketMan.fetchRocketManWord()
+        rocketMan.startRocketManGame()
+        
+        // Wait for response from URL session
+        while (rocketMan.urlError == .waiting) { }
+        // Check if there is an error in obtaining a word with the given parameters
+        if (rocketMan.urlError == .noWord) {
+            let noWordAlert = UIAlertController(title: "No Word Found", message: "The current set of options did not produce a word. Try changing difficulty or word length and try again.", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            noWordAlert.addAction(okButton)
+            present(noWordAlert, animated: true, completion: nil)
+            return
+            
+            // Check if there is an error in reaching the dictionary server
+        } else if (rocketMan.urlError == .noResponse) {
+            let noResponseAlert = UIAlertController(title: "Cannot Reach Server", message: "Cannot reach server. Make sure you are connected to the internet.", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            noResponseAlert.addAction(okButton)
+            present(noResponseAlert, animated: true, completion: nil)
+            return
+        }
         
         performSegue(withIdentifier: "GameViewController", sender: self)
     }
@@ -151,6 +168,7 @@ extension GameSettingsViewController: UITableViewDataSource {
         if (newWordMinimumLenghtValue > rocketMan.wordMaxLength) {
             wordMaxLengthLabel.text = String(newWordMinimumLenghtValue)
             wordMaxLengthStepper.value = Double(newWordMinimumLenghtValue)
+            rocketMan.wordMaxLength = newWordMinimumLenghtValue
         }
     }
     
@@ -164,6 +182,7 @@ extension GameSettingsViewController: UITableViewDataSource {
         if (newWordMaximumLenghtValue < rocketMan.wordMinLength) {
             wordMinLengthLabel.text = String(newWordMaximumLenghtValue)
             wordMinLengthStepper.value = Double(newWordMaximumLenghtValue)
+            rocketMan.wordMinLength = newWordMaximumLenghtValue
         }
     }
     
@@ -174,8 +193,5 @@ extension GameSettingsViewController: UITableViewDataSource {
         rocketMan.guessMaximum = newGuessMaximumValue
     }
     
-    
 }
-
-
 

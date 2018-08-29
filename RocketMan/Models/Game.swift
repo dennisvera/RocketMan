@@ -34,7 +34,7 @@ class Game {
     var difficulty: Int
     var gameOver: Bool = false
     
-    // MARK: - Initialization
+    // MARK: - Initializers
     
     init(word: String, guessMaximum: Int, difficulty: Int) {
         let uppercasedWord = word.uppercased()
@@ -67,6 +67,38 @@ class Game {
         return false
     }
     
+    // MARK: - Given a Character, will update guess current status of the guess array
+    
+    func guessLetter(_ guess: Character) -> GameOutcome {
+        // Game already over
+        if gameOver { return .gameOver }
+        
+        // Already guessed
+        if guessedLetters.contains(guess) { return .alreadyGuessed }
+        
+        // Update guess stats, run through word with guess, and check if incorrect
+        guessNumber += 1
+        guessedLetters.insert(guess)
+        if !guessCheck(guess) {
+            incorrectGuessNumber += 1
+            
+            if lossGame() {
+                gameOver = true
+                return .lossGuess
+            }
+            return .incorrectGuess
+        }
+        
+        // Win check
+        if winGame() {
+            gameOver = true
+            return .winGuess
+        }
+        
+        // Otherwise, correct guess
+        return .correctGuess
+    }
+    
     // MARK: - Selects Word With Guess And Updates The Guess Array. If The Guess is The Game Word, Return True
     
     private func guessCheck(_ guess: Character) -> Bool {
@@ -81,13 +113,39 @@ class Game {
         return correctGuess
     }
     
+    // MARK: - Guess the Game Word. Given a String, checks to see if it matches the game word
+    
+    func guessWord(_ guess: String) -> GameOutcome {
+        // Game already over
+        if gameOver { return .gameOver }
+        
+        // Uppercase entire guess
+        let guess = guess.uppercased()
+        
+        // Check if guess is correct
+        guessNumber += 1
+        if (guess == word) {
+            revealAll()
+            gameOver = true
+            return .winGuess
+        }
+        
+        // Check if a losing guess, otherwise incorrect guess
+        incorrectGuessNumber += 1
+        if lossGame() {
+            gameOver = true
+            return .lossGuess
+        }
+        return .incorrectGuess
+    }
+    
     // MARK: - Presents All Words In The Guess Array
- 
+    
     private func revealAll() {
         guessArray = wordArray
     }
     
- // MARK: - Returns a String From GuessArray. Underscores Represent Letters Of The Word That Have Not Yet Been Guessed
+    // MARK: - Returns a String From GuessArray. Underscores Represent Letters Of The Word That Have Not Yet Been Guessed
     
     func getCurrentGuess() -> String {
         var string = ""
@@ -98,12 +156,5 @@ class Game {
     }
     
 }
-
-
-
-
-
-
-
 
 
