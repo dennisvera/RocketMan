@@ -39,7 +39,7 @@ class GameWordView: UIView {
     
     override func draw(_ rect: CGRect) {
         if (word != nil) {
-            let length = CGFloat(word!.count)
+            let length = CGFloat(word!.characters.count)
             let spacing: CGFloat = 5.0
             let labelWidth: CGFloat = 20.0
             var margin = (self.frame.width - spacing * length - labelWidth * length) / 2

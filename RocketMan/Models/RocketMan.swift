@@ -159,41 +159,4 @@ class RocketMan: NSObject {
         throw GameError.noCurrentGame
     }
     
-//    // MARK: - Encoding
-//
-//    //Archiving Paths
-//    static var DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-//    static var ArchiveURL = DocumentsDirectory.appendingPathComponent("RocketMan")
-//
-//    //NSCoding
-//    func encode(with aCoder: NSCoder) {
-//        aCoder.encode(guessMaximum, forKey: "guessMaximum")
-//        aCoder.encode(difficulty, forKey: "difficulty")
-//        aCoder.encode(wordMinLength, forKey: "wordMinLength")
-//        aCoder.encode(wordMaxLength, forKey: "wordMaxLength")
-//    }
-//
-//    required convenience init?(coder aDecoder: NSCoder) {
-//        let guessMaximum = aDecoder.decodeInteger(forKey: "guessMaximum")
-//        let difficulty = aDecoder.decodeInteger(forKey: "difficulty")
-//        let wordMinLength = aDecoder.decodeInteger(forKey: "wordMinLength")
-//        let wordMaxLength = aDecoder.decodeInteger(forKey: "wordMaxLength")
-//        self.init(guessMaximum: guessMaximum, difficulty: difficulty, wordMinLength: wordMinLength, wordMaxLength: wordMaxLength)
-//    }
-//
-//    //Save &Load functions
-//
-//    //Saves the current set of table plans
-//    static func saveRocketMan(rocketMan: RocketMan) {
-//        let successfulSave = NSKeyedArchiver.archiveRootObject(rocketMan, toFile: RocketMan.ArchiveURL.path)
-//        if !successfulSave {
-//            print("Save error...")
-//        }
-//    }
-//
-//    //Loads the saved set of table plans
-//    static func loadRocketMan() -> RocketMan? {
-//        return NSKeyedUnarchiver.unarchiveObject(withFile: RocketMan.ArchiveURL.path) as? RocketMan
-//    }
-    
 }

@@ -192,14 +192,14 @@
                                     <constraint firstItem="wng-MO-2bB" firstAttribute="centerX" secondItem="a3c-Rp-MUX" secondAttribute="centerX" id="yeb-qC-QeO"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUS-qM-ban" userLabel="Game Word View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUS-qM-ban" userLabel="Game Word View" customClass="GameWordView" customModule="RocketMan" customModuleProvider="target">
                                 <rect key="frame" x="16" y="506" width="343" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="tSx-v1-V3d"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-b6-4RR" userLabel="Keyboard View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-b6-4RR" userLabel="Keyboard View" customClass="KeyboardView" customModule="RocketMan" customModuleProvider="target">
                                 <rect key="frame" x="16" y="572" width="343" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -229,9 +229,9 @@
                     <navigationItem key="navigationItem" title="ROCKETMAN" id="HPa-M8-sgd"/>
                     <connections>
                         <outlet property="backButton" destination="gNt-5p-TSq" id="1AI-NA-rX4"/>
-                        <outlet property="gameWordView" destination="OUS-qM-ban" id="vHf-w2-dHp"/>
+                        <outlet property="gameWordView" destination="OUS-qM-ban" id="gOt-Hs-bTp"/>
                         <outlet property="guessesLeftLabel" destination="91n-Km-GE1" id="0ZB-dw-gof"/>
-                        <outlet property="keyboardView" destination="Rbt-b6-4RR" id="lV8-Pa-M2D"/>
+                        <outlet property="keyboardView" destination="Rbt-b6-4RR" id="klw-co-VXM"/>
                         <outlet property="resetGameButton" destination="pK4-6Z-g0g" id="kvu-w5-ivN"/>
                     </connections>
                 </viewController>
