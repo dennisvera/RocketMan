@@ -10,14 +10,23 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    // MARK: - Outlets
+    @IBOutlet var backButton: UIButton!
+    @IBOutlet var resetGameButton: UIButton!
+    @IBOutlet var guessesLeftLabel: UILabel!
+    @IBOutlet var keyboardView: KeyboardView!
+    
     // MARK: - Properties
     
     var rocketMan: RocketMan?
+    
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-            print(self.rocketMan?.currentGame?.word ?? "Unable to Retrieve Word")
+            print(rocketMan?.currentGame?.word ?? "Unable to Retrieve Word")
+        
     }
 
 }

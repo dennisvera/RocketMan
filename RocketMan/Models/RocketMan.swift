@@ -27,6 +27,8 @@ class RocketMan: NSObject {
     
     static let sharedInstance = RocketMan()
     
+    // MARK: - Type Instance
+    
     var guessMaximum: Int
     var difficulty: Int
     var wordMinLength: Int
@@ -60,11 +62,6 @@ class RocketMan: NSObject {
         
         // Fetch Reach API Client
         ReachClient.fetchReachData(difficulty: difficulty, wordMinLength: wordMinLength, wordMaxLength: wordMaxLength) { (selectedGameWord) in
-//            print(self.guessMaximum)
-//            print(self.difficulty)
-//            print(self.wordMinLength)
-//            print(self.wordMaxLength)
-
             if selectedGameWord != "" {
                 print(selectedGameWord)
                 self.startGame(selectedGameWord, self.difficulty)
@@ -111,17 +108,7 @@ class RocketMan: NSObject {
     private func startGame(_ word: String, _ difficulty: Int) {
         currentGame = Game(word: word, guessMaximum: guessMaximum, difficulty: difficulty)
     }
-    
-    // MARK: - Submits letter guess to the current game. Returns a Game.GameOutcome option based on the outcome of the guess. If no current game is set, throws an error
-    
-    func guessLetter(_ guess: Character) throws -> Game.GameOutcome {
-        if let outcome = currentGame?.guessLetter(guess) {
-            return outcome
-        }
         
-        throw GameError.noCurrentGame
-    }
-    
 }
 
 
