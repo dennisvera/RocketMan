@@ -10,9 +10,7 @@ import UIKit
 
 class KeyboardButton: UIButton {
     
-    // MARK: Properties
+    // MARK: - Letters The Buttons Represent
     
-    // Letter The Button Represents
     var key: Character!
-    
 }

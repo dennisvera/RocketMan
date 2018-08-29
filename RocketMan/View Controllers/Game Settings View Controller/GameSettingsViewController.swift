@@ -31,14 +31,11 @@ final class GameSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupView()
     }
     
-    // MARK: - View Methods
-    
-    private func setupView() {
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     // MARK: - Navigation
@@ -47,9 +44,7 @@ final class GameSettingsViewController: UIViewController {
         if segue.identifier == "GameViewController" {
             let destination = segue.destination as! GameViewController
             destination.rocketMan = rocketMan
-        }
-        
-//        RocketMan.saveRocketMan(rocketMan: rocketMan)
+        }        
     }
         
     // MARK: - Actions
@@ -61,15 +56,15 @@ final class GameSettingsViewController: UIViewController {
         while (rocketMan.urlError == .waiting) { }
         // Check if there is an error in obtaining a word with the given parameters
         if (rocketMan.urlError == .noWord) {
-            let noWordAlert = UIAlertController(title: "No Word Found", message: "The current set of options did not produce a word. Try changing difficulty or word length and try again.", preferredStyle: .alert)
+            let noWordAlert = UIAlertController(title: "No Word Found", message: "Change difficulty or word length and try again.", preferredStyle: .alert)
             let okButton = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
             noWordAlert.addAction(okButton)
             present(noWordAlert, animated: true, completion: nil)
             return
             
-            // Check if there is an error in reaching the dictionary server
+            // Check if there is an error in reaching the server
         } else if (rocketMan.urlError == .noResponse) {
-            let noResponseAlert = UIAlertController(title: "Cannot Reach Server", message: "Cannot reach server. Make sure you are connected to the internet.", preferredStyle: .alert)
+            let noResponseAlert = UIAlertController(title: "Server Unavailable", message: "Make sure you are connected to the internet.", preferredStyle: .alert)
             let okButton = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
             noResponseAlert.addAction(okButton)
             present(noResponseAlert, animated: true, completion: nil)
@@ -81,7 +76,7 @@ final class GameSettingsViewController: UIViewController {
     
 }
 
-// MARK: - UITableView Data Source
+// MARK: - UITableView Data Source Extension
 
 extension GameSettingsViewController: UITableViewDataSource {
     
@@ -151,20 +146,20 @@ extension GameSettingsViewController: UITableViewDataSource {
     
     // MARK: - Stepper Helper Methods
     
-    // MARK: - Triggered When the Difficulty Stepper is Tapped. Updates Difficulty Value
+    // MARK: - Difficulty Stepper Updates Difficulty Value
     @objc private func wordDifficulty(_ sender: UIStepper) {
         let newDifficultyValue = Int(sender.value)
         difficultyLabel.text = String(newDifficultyValue)
         rocketMan.difficulty = newDifficultyValue
     }
     
-    // MARK: - Triggered when the word minimum stepper is tapped. Updates Word Minimum Legth Value
+    // MARK: - Word Minimum Stepper Updates Word Minimum Legth Value
     @objc private func wordMinimumLength(_ sender: UIStepper) {
         let newWordMinimumLenghtValue = Int(sender.value)
         wordMinLengthLabel.text = String(newWordMinimumLenghtValue)
         rocketMan.wordMinLength = newWordMinimumLenghtValue
         
-        // Update maximum word length if minimum word length exceeds it
+        // Updates maximum word length if minimum word length exceeds it
         if (newWordMinimumLenghtValue > rocketMan.wordMaxLength) {
             wordMaxLengthLabel.text = String(newWordMinimumLenghtValue)
             wordMaxLengthStepper.value = Double(newWordMinimumLenghtValue)
@@ -172,13 +167,13 @@ extension GameSettingsViewController: UITableViewDataSource {
         }
     }
     
-    // MARK: - Triggered When the Word Maximum Stepper is Tapped. Updates Word Maximum Legth Value
+    // MARK: - Word Maximum Stepper Updates Word Maximum Legth Value
     @objc private func wordMaximumLength(_ sender: UIStepper) {
         let newWordMaximumLenghtValue = Int(sender.value)
         wordMaxLengthLabel.text = String(newWordMaximumLenghtValue)
         rocketMan.wordMaxLength = newWordMaximumLenghtValue
         
-        // Change mimum word length if maximum word length is lower
+        // Updates minimum word length if maximum word length exceeds it
         if (newWordMaximumLenghtValue < rocketMan.wordMinLength) {
             wordMinLengthLabel.text = String(newWordMaximumLenghtValue)
             wordMinLengthStepper.value = Double(newWordMaximumLenghtValue)
@@ -186,7 +181,7 @@ extension GameSettingsViewController: UITableViewDataSource {
         }
     }
     
-    // MARK: - Triggered When Guess Stepper is Tapped. Updates Guess value
+    // MARK: - Guess Stepper Updates Guess value
     @objc private func guessMaximum(_ sender: UIStepper) {
         let newGuessMaximumValue = Int(sender.value)
         guessMaximumLabel.text = String(newGuessMaximumValue)

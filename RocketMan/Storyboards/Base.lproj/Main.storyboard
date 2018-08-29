@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game Settings-->
+        <!--RocketMan Settings-->
         <scene sceneID="vue-1e-qJR">
             <objects>
                 <viewController id="lcG-1D-aRO" customClass="GameSettingsViewController" customModule="RocketMan" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,7 +120,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wk7-AP-cSu"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Game Settings" id="2jk-0r-bE2" userLabel="Game Settings"/>
+                    <navigationItem key="navigationItem" title="RocketMan Settings" id="2jk-0r-bE2" userLabel="Game Settings">
+                        <barButtonItem key="backBarButtonItem" systemItem="refresh" id="U9L-xc-cRW"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="sS6-qy-wsb" id="M7f-Jp-n3s"/>
                         <segue destination="Gl2-zz-PJE" kind="show" identifier="GameViewController" id="jB1-50-WVE"/>
@@ -128,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kr2-Fh-gCv" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356" y="165.51724137931035"/>
+            <point key="canvasLocation" x="1380" y="166"/>
         </scene>
         <!--ROCKETMAN-->
         <scene sceneID="3jH-0c-pGq">
@@ -138,54 +140,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4U-zQ-BIX" userLabel="Game Top View">
-                                <rect key="frame" x="16" y="94" width="343" height="60"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fT7-2z-L4x" userLabel="Game Top Stack View">
-                                        <rect key="frame" x="10" y="6" width="323" height="48"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNt-5p-TSq">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="48"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="zJA-Xt-fOi"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess Left: 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91n-Km-GE1">
-                                                <rect key="frame" x="80" y="0.0" width="155" height="48"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pK4-6Z-g0g">
-                                                <rect key="frame" x="255" y="0.0" width="68" height="48"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="UUC-3V-jTG"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess Left: 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91n-Km-GE1">
+                                <rect key="frame" x="16" y="98.333333333333329" width="343" height="29.999999999999986"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="fT7-2z-L4x" firstAttribute="top" secondItem="o4U-zQ-BIX" secondAttribute="top" constant="6" id="9c0-L2-Wt6"/>
-                                    <constraint firstItem="fT7-2z-L4x" firstAttribute="leading" secondItem="o4U-zQ-BIX" secondAttribute="leading" constant="10" id="Asr-LU-2IF"/>
-                                    <constraint firstAttribute="trailing" secondItem="fT7-2z-L4x" secondAttribute="trailing" constant="10" id="hR6-ye-cbp"/>
-                                    <constraint firstAttribute="height" constant="60" id="jak-6n-RMa"/>
-                                    <constraint firstAttribute="bottom" secondItem="fT7-2z-L4x" secondAttribute="bottom" constant="6" id="xUp-D2-2gB"/>
+                                    <constraint firstAttribute="height" constant="30" id="hdB-QO-a5G"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3c-Rp-MUX" userLabel="RocketMan View">
-                                <rect key="frame" x="16" y="160" width="343" height="340"/>
+                                <rect key="frame" x="16" y="138.33333333333337" width="343" height="360"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RocketMan1" translatesAutoresizingMaskIntoConstraints="NO" id="wng-MO-2bB">
-                                        <rect key="frame" x="47.666666666666657" y="2" width="247.99999999999997" height="336"/>
+                                        <rect key="frame" x="47.666666666666657" y="2" width="247.99999999999997" height="356"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="340" id="4hH-zR-3Hu"/>
+                                    <constraint firstAttribute="height" constant="360" id="4hH-zR-3Hu"/>
                                     <constraint firstItem="wng-MO-2bB" firstAttribute="centerY" secondItem="a3c-Rp-MUX" secondAttribute="centerY" id="WwA-eC-UYn"/>
                                     <constraint firstItem="wng-MO-2bB" firstAttribute="top" secondItem="a3c-Rp-MUX" secondAttribute="top" constant="2" id="hMZ-O4-N46"/>
                                     <constraint firstAttribute="bottom" secondItem="wng-MO-2bB" secondAttribute="bottom" constant="2" id="k7j-8m-qwK"/>
@@ -193,46 +167,44 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUS-qM-ban" userLabel="Game Word View" customClass="GameWordView" customModule="RocketMan" customModuleProvider="target">
-                                <rect key="frame" x="16" y="506" width="343" height="60"/>
+                                <rect key="frame" x="16" y="508.33333333333326" width="343" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="tSx-v1-V3d"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-b6-4RR" userLabel="Keyboard View" customClass="KeyboardView" customModule="RocketMan" customModuleProvider="target">
-                                <rect key="frame" x="16" y="572" width="343" height="200"/>
+                                <rect key="frame" x="16" y="582.33333333333337" width="343" height="190"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Hiy-H8-5rJ"/>
+                                    <constraint firstAttribute="height" constant="190" id="Hiy-H8-5rJ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="o4U-zQ-BIX" firstAttribute="leading" secondItem="KEm-qb-Txx" secondAttribute="leading" constant="16" id="7Eh-QK-pP1"/>
-                            <constraint firstItem="OUS-qM-ban" firstAttribute="top" secondItem="a3c-Rp-MUX" secondAttribute="bottom" constant="6" id="7LU-5A-6Zv"/>
+                            <constraint firstItem="OUS-qM-ban" firstAttribute="top" secondItem="a3c-Rp-MUX" secondAttribute="bottom" constant="10" id="4Zf-B9-3pP"/>
                             <constraint firstItem="KEm-qb-Txx" firstAttribute="trailing" secondItem="Rbt-b6-4RR" secondAttribute="trailing" constant="16" id="7hO-BQ-O6h"/>
                             <constraint firstItem="KEm-qb-Txx" firstAttribute="trailing" secondItem="OUS-qM-ban" secondAttribute="trailing" constant="16" id="Bh5-5E-Pvg"/>
                             <constraint firstItem="Rbt-b6-4RR" firstAttribute="leading" secondItem="KEm-qb-Txx" secondAttribute="leading" constant="16" id="Geq-oS-wsR"/>
-                            <constraint firstItem="KEm-qb-Txx" firstAttribute="trailing" secondItem="o4U-zQ-BIX" secondAttribute="trailing" constant="16" id="LZh-Or-ca1"/>
-                            <constraint firstItem="KEm-qb-Txx" firstAttribute="bottom" secondItem="Rbt-b6-4RR" secondAttribute="bottom" constant="6" id="Mbw-8n-fRf"/>
+                            <constraint firstItem="91n-Km-GE1" firstAttribute="top" secondItem="KEm-qb-Txx" secondAttribute="top" constant="10" id="Kdi-x9-gGN"/>
                             <constraint firstItem="KEm-qb-Txx" firstAttribute="trailing" secondItem="a3c-Rp-MUX" secondAttribute="trailing" constant="16" id="SYd-uG-8SH"/>
-                            <constraint firstItem="a3c-Rp-MUX" firstAttribute="top" secondItem="o4U-zQ-BIX" secondAttribute="bottom" constant="6" id="TPb-cT-4RZ"/>
                             <constraint firstItem="a3c-Rp-MUX" firstAttribute="leading" secondItem="KEm-qb-Txx" secondAttribute="leading" constant="16" id="VZz-uy-Ux1"/>
-                            <constraint firstItem="o4U-zQ-BIX" firstAttribute="top" secondItem="KEm-qb-Txx" secondAttribute="top" constant="6" id="WxT-hu-gxE"/>
                             <constraint firstItem="OUS-qM-ban" firstAttribute="leading" secondItem="KEm-qb-Txx" secondAttribute="leading" constant="16" id="aG1-9x-afu"/>
+                            <constraint firstItem="KEm-qb-Txx" firstAttribute="bottom" secondItem="Rbt-b6-4RR" secondAttribute="bottom" constant="5.6666666666666288" id="eFA-Zq-Azs"/>
+                            <constraint firstItem="a3c-Rp-MUX" firstAttribute="top" secondItem="91n-Km-GE1" secondAttribute="bottom" constant="10" id="gWm-C3-0AY"/>
                             <constraint firstItem="a3c-Rp-MUX" firstAttribute="centerX" secondItem="KEm-qb-Txx" secondAttribute="centerX" id="hkP-vb-Qfv"/>
-                            <constraint firstItem="Rbt-b6-4RR" firstAttribute="top" secondItem="OUS-qM-ban" secondAttribute="bottom" constant="6" id="r0V-aH-ciS"/>
+                            <constraint firstItem="Rbt-b6-4RR" firstAttribute="top" secondItem="OUS-qM-ban" secondAttribute="bottom" constant="14" id="r0V-aH-ciS"/>
+                            <constraint firstItem="91n-Km-GE1" firstAttribute="leading" secondItem="KEm-qb-Txx" secondAttribute="leading" constant="16" id="u5Y-yb-9xJ"/>
+                            <constraint firstItem="KEm-qb-Txx" firstAttribute="trailing" secondItem="91n-Km-GE1" secondAttribute="trailing" constant="16" id="yLU-3w-Sm9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KEm-qb-Txx"/>
                     </view>
                     <navigationItem key="navigationItem" title="ROCKETMAN" id="HPa-M8-sgd"/>
                     <connections>
-                        <outlet property="backButton" destination="gNt-5p-TSq" id="1AI-NA-rX4"/>
                         <outlet property="gameWordView" destination="OUS-qM-ban" id="gOt-Hs-bTp"/>
                         <outlet property="guessesLeftLabel" destination="91n-Km-GE1" id="0ZB-dw-gof"/>
                         <outlet property="keyboardView" destination="Rbt-b6-4RR" id="klw-co-VXM"/>
-                        <outlet property="resetGameButton" destination="pK4-6Z-g0g" id="kvu-w5-ivN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ohd-BJ-xIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -255,7 +227,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODO-Zy-UAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="586" y="166"/>
+            <point key="canvasLocation" x="633" y="166"/>
         </scene>
     </scenes>
     <resources>

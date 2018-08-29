@@ -13,12 +13,11 @@ class KeyboardView: UIView {
     // MARK: - Properties
     
     var buttons = [KeyboardButton]()
-    var wordButton: KeyboardButton!
     let characters: [Character] = ["Q","W","E","R","T","Y","U","I","O","P",
                                    "A","S","D","F","G","H","J","K","L",
                                    "Z","X","C","V","B","N","M"]
     
-    // MARK: - Initializer
+    // MARK: - Initializers
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,19 +34,8 @@ class KeyboardView: UIView {
             newButton.key = character
             
             buttons.append(newButton)
-            
             self.addSubview(newButton)
         }
-        
-        wordButton = KeyboardButton()
-        wordButton.setTitle("Word", for: .normal)
-        wordButton.setTitleColor(UIColor.lightGray, for: .highlighted)
-        wordButton.setTitleColor(UIColor.black, for: .normal)
-        wordButton.backgroundColor = UIColor.groupTableViewBackground
-        wordButton.isEnabled = true
-        wordButton.key = "!"
-        
-        self.addSubview(wordButton)
     }
     
     override init(frame: CGRect) {
@@ -67,17 +55,9 @@ class KeyboardView: UIView {
             buttons.append(newButton)
             self.addSubview(newButton)
         }
-        
-        wordButton = KeyboardButton()
-        wordButton.setTitle("Word", for: .normal)
-        wordButton.setTitleColor(UIColor.lightGray, for: .highlighted)
-        wordButton.setTitleColor(UIColor.black, for: .normal)
-        wordButton.backgroundColor = UIColor.groupTableViewBackground
-        wordButton.isEnabled = true
-        wordButton.key = "!"
-        
-        self.addSubview(wordButton)
     }
+    
+    // MARK: - Draw Buttons
     
     override func draw(_ rect: CGRect) {
         let width = self.frame.width
@@ -98,24 +78,19 @@ class KeyboardView: UIView {
         for index in 10..<19 {
             let button = buttons[index]
             let adjustedIndex = index - 10
-            let extraSpace = buttonWidth/2 + spacing
+            let extraSpace = buttonWidth / 2 + spacing
             let x = extraSpace + buttonWidth * CGFloat(adjustedIndex) + spacing * CGFloat(adjustedIndex)
-            button.frame = CGRect(x: x, y: buttonHeight+rowSpacing, width: buttonWidth, height: buttonHeight)
+            button.frame = CGRect(x: x, y: buttonHeight + rowSpacing, width: buttonWidth, height: buttonHeight)
         }
         
         // Third row
         for index in 19..<26 {
             let button = buttons[index]
             let adjustedIndex = index - 19
-            let extraSpace = buttonWidth / 2 + spacing * 1.5
+            let extraSpace = buttonWidth / 2 + spacing * 18
             let x = extraSpace + buttonWidth * CGFloat(adjustedIndex) + spacing * CGFloat(adjustedIndex)
             button.frame = CGRect(x: x, y: buttonHeight * 2 + rowSpacing * 2, width: buttonWidth, height: buttonHeight)
         }
-        
-        // Word button in third row
-        let extraSpace = buttonWidth / 2 + spacing * 1.5
-        let x = extraSpace + buttonWidth * CGFloat(7) + spacing * CGFloat(7)
-        wordButton.frame = CGRect(x: x, y: buttonHeight * 2 + rowSpacing * 2, width: buttonWidth * 2, height: buttonHeight)
     }
     
 }
