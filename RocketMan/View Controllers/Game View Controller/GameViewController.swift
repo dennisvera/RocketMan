@@ -15,11 +15,19 @@ class GameViewController: UIViewController {
     @IBOutlet var guessesLeftLabel: UILabel!
     @IBOutlet var keyboardView: KeyboardView!
     @IBOutlet var gameWordView: GameWordView!
+    
+    @IBOutlet var asteroid1: UIImageView!
+    @IBOutlet var asteroid2: UIImageView!
+    @IBOutlet var asteroid3: UIImageView!
+    @IBOutlet var asteroid4: UIImageView!
+    @IBOutlet var asteroid5: UIImageView!
+    @IBOutlet var asteroid6: UIImageView!
+    
         
     // MARK: - Properties
     
     var rocketMan: RocketMan!
-    var rocket = [UIImageView]()
+    var asteroids = [UIImageView]()
 
     // MARK: - View Life Cycle
     
@@ -35,6 +43,7 @@ class GameViewController: UIViewController {
         setupGameWordView()
         setupKeyboardButtons()
         setupGameGuessesLabel()
+        setupAsteroids()
         
         // Game Word
         print(rocketMan.currentGame!.word)
@@ -45,27 +54,37 @@ class GameViewController: UIViewController {
     private func setupGameWordView() {
         guard let gameWord = rocketMan.currentGame?.word else { return }
         gameWordView.word = gameWord
-        gameWordView.backgroundColor = .white
         gameWordView.setNeedsLayout()
     }
     
     private func setupGameGuessesLabel() {
         guessesLeftLabel.text = "Guesses Left: " + String(rocketMan.remainingGuesses())
-        hideAllParts()
+    }
+    
+    private func setupAsteroids() {
+        asteroids = [asteroid1, asteroid2, asteroid3, asteroid4, asteroid5, asteroid6]
+        hideAllAsteroids()
     }
     
     private func processGame(_ game: Game.GameOutcome) {
         // Update game word
         gameWordView.updateWord(rocketMan.currentGame!.guessArray)
         guessesLeftLabel.text = "Guesses Left: " + String(rocketMan.remainingGuesses())
+        updateAsteroidViews(rocketMan.remainingGuessesRatio())
         
         switch game {
         case .lossGuess:
             disableKeyboard()
             gameWordView.fillWord(rocketMan.currentGame!.wordArray)
+            guessesLeftLabel.textColor = .red
+            guessesLeftLabel.backgroundColor = .white
+            guessesLeftLabel.alpha = 1.0
             guessesLeftLabel.text = "You lose!"
         case .winGuess:
             disableKeyboard()
+            guessesLeftLabel.textColor = .black
+            guessesLeftLabel.backgroundColor = .white
+            guessesLeftLabel.alpha = 1.0
             guessesLeftLabel.text = "You win!"
             
         default:
@@ -77,6 +96,8 @@ class GameViewController: UIViewController {
     
     private func setupKeyboardButtons() {
         for button in keyboardView.buttons {
+            button.backgroundColor = .white
+            button.alpha = 0.7
             button.addTarget(self, action: #selector(keyboardTapped(_:)), for: .touchUpInside)
         }
     }
@@ -96,8 +117,8 @@ class GameViewController: UIViewController {
         sender.setTitleColor(UIColor.lightGray, for: .normal)
         
         do {
-            let outcome = try rocketMan.guessLetter(character!)
-            processGame(outcome)
+            let gameOutcome = try rocketMan.guessLetter(character!)
+            processGame(gameOutcome)
         } catch {
            print("No Game is Being Played")
         }
@@ -105,31 +126,27 @@ class GameViewController: UIViewController {
     
     // MARK: - RocketMan Helper Methods
     
-    /* Function that hides all parts of RocketMan. */
-    func hideAllParts() {
-        for part in rocket {
-            part.isHidden = true
+    // MARK: - Hide all asteroids
+    func hideAllAsteroids() {
+        for asteroid in asteroids {
+            asteroid.isHidden = true
         }
     }
     
-    /* Function that reveals parts of the hangman based off of the given ratio. */
-    func updateRocket(_ ratio: Double) {
+   // MARK: - Show Asteroids
+    func updateAsteroidViews(_ ratio: Double) {
         let adjustedRatio = ratio * 6.0
         let lastIndex = Int(adjustedRatio)
         for index in 0..<Int(lastIndex) {
-            rocket[index].alpha = 1
-            rocket[index].isHidden = false
+            asteroids[index].alpha = 1
+            asteroids[index].isHidden = false
         }
         
-        // Show portion of next part if remainder
+        // Show next asteroid
         if (lastIndex < 6) {
             let remainder = adjustedRatio - Double(lastIndex)
-            rocket[lastIndex].isHidden = false
-            rocket[lastIndex].alpha = CGFloat(remainder)
-        }
-        
-        // Show frown if all parts shown
-        if (ratio == 1) {
+            asteroids[lastIndex].isHidden = false
+            asteroids[lastIndex].alpha = CGFloat(remainder)
         }
     }
     

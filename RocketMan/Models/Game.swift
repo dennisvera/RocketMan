@@ -49,7 +49,7 @@ class Game {
         }
     }
     
-    // MARK: - Returns true if the Game Ended as a Loss. Otherwise False
+    // MARK: - Returns true if the Game Ended as a Win. Otherwise False
     
     func winGame() -> Bool {
         if (revealedLetters == wordArray.count) {
@@ -58,8 +58,8 @@ class Game {
         return false
     }
     
-    // MARK: - Returns true if the game has neded as a loss??? Otherwise, returns false
-    
+    // MARK: - Returns true if the Game Ended as a Lose. Otherwise False
+
     func lossGame() -> Bool {
         if (incorrectGuessNumber == guessMaximum) {
             return true

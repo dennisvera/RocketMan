@@ -20,10 +20,12 @@ class GameWordView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = UIColor.white
+        self.alpha = 0.7
+        
         for _ in 0..<12 {
             let label = UILabel()
-            label.font = UIFont.systemFont(ofSize: 22)
+            label.font = UIFont.systemFont(ofSize: 24)
             label.adjustsFontSizeToFitWidth = true
             label.textAlignment = .center
             label.text = "_"

@@ -41,7 +41,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sS6-qy-wsb">
                                 <rect key="frame" x="0.0" y="248" width="375" height="350"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsTableViewCell" rowHeight="60" id="OCg-C8-DSm" customClass="SettingsTableViewCell" customModule="RocketMan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
@@ -93,32 +93,33 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffr-Mh-bSv">
                                 <rect key="frame" x="60" y="658" width="255" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Qb6-uD-365"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.078431372549019607" green="0.16078431372549018" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="playButtonTapped:" destination="lcG-1D-aRO" eventType="touchUpInside" id="1Ij-nX-8Kd"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.078431372549019607" green="0.16078431372549018" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wk7-AP-cSu" firstAttribute="trailing" secondItem="cpt-UT-fPP" secondAttribute="trailing" id="3oU-yp-tWQ"/>
-                            <constraint firstItem="Ffr-Mh-bSv" firstAttribute="leading" secondItem="wk7-AP-cSu" secondAttribute="leading" constant="60" id="ByV-2B-Kkg"/>
-                            <constraint firstItem="wk7-AP-cSu" firstAttribute="trailing" secondItem="Ffr-Mh-bSv" secondAttribute="trailing" constant="60" id="H1x-90-gJ9"/>
-                            <constraint firstItem="wk7-AP-cSu" firstAttribute="trailing" secondItem="sS6-qy-wsb" secondAttribute="trailing" id="P0j-hI-cxJ"/>
+                            <constraint firstItem="pif-3B-hbK" firstAttribute="trailing" secondItem="cpt-UT-fPP" secondAttribute="trailing" id="3oU-yp-tWQ"/>
+                            <constraint firstItem="Ffr-Mh-bSv" firstAttribute="leading" secondItem="pif-3B-hbK" secondAttribute="leading" constant="60" id="ByV-2B-Kkg"/>
+                            <constraint firstItem="pif-3B-hbK" firstAttribute="trailing" secondItem="Ffr-Mh-bSv" secondAttribute="trailing" constant="60" id="H1x-90-gJ9"/>
+                            <constraint firstItem="pif-3B-hbK" firstAttribute="trailing" secondItem="sS6-qy-wsb" secondAttribute="trailing" id="P0j-hI-cxJ"/>
                             <constraint firstItem="sS6-qy-wsb" firstAttribute="top" secondItem="cpt-UT-fPP" secondAttribute="bottom" id="Pcc-fw-3FM"/>
                             <constraint firstItem="Ffr-Mh-bSv" firstAttribute="top" secondItem="sS6-qy-wsb" secondAttribute="bottom" constant="60" id="Pqn-24-6Aw"/>
-                            <constraint firstItem="cpt-UT-fPP" firstAttribute="top" secondItem="wk7-AP-cSu" secondAttribute="top" id="UQI-yB-3BK"/>
-                            <constraint firstItem="cpt-UT-fPP" firstAttribute="leading" secondItem="wk7-AP-cSu" secondAttribute="leading" id="ckP-BI-wZT"/>
-                            <constraint firstItem="wk7-AP-cSu" firstAttribute="bottom" secondItem="Ffr-Mh-bSv" secondAttribute="bottom" constant="60" id="dkp-fM-gNa"/>
-                            <constraint firstItem="sS6-qy-wsb" firstAttribute="leading" secondItem="wk7-AP-cSu" secondAttribute="leading" id="omX-8V-TyL"/>
+                            <constraint firstItem="cpt-UT-fPP" firstAttribute="top" secondItem="pif-3B-hbK" secondAttribute="top" id="UQI-yB-3BK"/>
+                            <constraint firstItem="cpt-UT-fPP" firstAttribute="leading" secondItem="pif-3B-hbK" secondAttribute="leading" id="ckP-BI-wZT"/>
+                            <constraint firstItem="pif-3B-hbK" firstAttribute="bottom" secondItem="Ffr-Mh-bSv" secondAttribute="bottom" constant="60" id="dkp-fM-gNa"/>
+                            <constraint firstItem="sS6-qy-wsb" firstAttribute="leading" secondItem="pif-3B-hbK" secondAttribute="leading" id="omX-8V-TyL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="wk7-AP-cSu"/>
+                        <viewLayoutGuide key="safeArea" id="pif-3B-hbK"/>
                     </view>
                     <navigationItem key="navigationItem" title="RocketMan Settings" id="2jk-0r-bE2" userLabel="Game Settings">
                         <barButtonItem key="backBarButtonItem" systemItem="refresh" id="U9L-xc-cRW"/>
@@ -155,63 +156,139 @@
                                     <constraint firstItem="MeM-AH-Rn8" firstAttribute="leading" secondItem="UrH-bh-QRL" secondAttribute="leading" id="qne-bl-0Kf"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess Left: 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91n-Km-GE1">
-                                <rect key="frame" x="16" y="98.333333333333329" width="343" height="29.999999999999986"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guesses Left: 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91n-Km-GE1">
+                                <rect key="frame" x="102.66666666666669" y="98" width="170" height="40"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="hdB-QO-a5G"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="YnQ-a1-Ktx"/>
+                                    <constraint firstAttribute="height" constant="40" id="hdB-QO-a5G"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3c-Rp-MUX" userLabel="RocketMan View">
-                                <rect key="frame" x="16" y="138.33333333333337" width="343" height="360"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3c-Rp-MUX" userLabel="Game View">
+                                <rect key="frame" x="0.0" y="138" width="375" height="366"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rocketMan" translatesAutoresizingMaskIntoConstraints="NO" id="bzU-Kl-tKA">
+                                        <rect key="frame" x="190" y="188" width="90" height="94"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="94" id="SE8-Bf-t0h"/>
+                                            <constraint firstAttribute="width" constant="90" id="xjs-wX-Rdg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asteroid2" translatesAutoresizingMaskIntoConstraints="NO" id="39o-b0-oNM">
+                                        <rect key="frame" x="20" y="118" width="130" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="UAO-3c-I4Q"/>
+                                            <constraint firstAttribute="height" constant="150" id="gTh-Lc-suf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asteroid3" translatesAutoresizingMaskIntoConstraints="NO" id="gbS-bP-shW" userLabel="Asteroid3">
+                                        <rect key="frame" x="223" y="40" width="56" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="56" id="HfM-Rq-bXc"/>
+                                            <constraint firstAttribute="height" constant="44" id="gSd-Nm-dpk"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asteroid4" translatesAutoresizingMaskIntoConstraints="NO" id="rBl-xJ-8cK">
+                                        <rect key="frame" x="135" y="65" width="70" height="103"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="103" id="0XU-1W-pZ3"/>
+                                            <constraint firstAttribute="width" constant="70" id="OGG-IZ-DsH"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asteroid5" translatesAutoresizingMaskIntoConstraints="NO" id="8C5-o3-LVO">
+                                        <rect key="frame" x="270" y="74" width="85" height="95"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="85" id="WBh-q3-qCV"/>
+                                            <constraint firstAttribute="height" constant="95" id="pwC-G6-IJt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asteroid6" translatesAutoresizingMaskIntoConstraints="NO" id="jGP-Ui-ks5">
+                                        <rect key="frame" x="184" y="180" width="102" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="102" id="98C-VA-dMB"/>
+                                            <constraint firstAttribute="height" constant="110" id="uKk-C0-gwd"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asteroid1" translatesAutoresizingMaskIntoConstraints="NO" id="pfY-5Q-wOX">
+                                        <rect key="frame" x="46.999999999999993" y="15" width="71.333333333333314" height="83"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="83" id="PAz-FF-ZB3"/>
+                                            <constraint firstAttribute="width" constant="71.333333333333314" id="mEX-36-dst"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="360" id="4hH-zR-3Hu"/>
+                                    <constraint firstAttribute="trailing" secondItem="8C5-o3-LVO" secondAttribute="trailing" constant="20" id="0Iq-KP-oGn"/>
+                                    <constraint firstItem="39o-b0-oNM" firstAttribute="leading" secondItem="a3c-Rp-MUX" secondAttribute="leading" constant="20" id="396-eg-3G4"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="39o-b0-oNM" secondAttribute="bottom" priority="999" constant="66" id="5KN-fi-b1A"/>
+                                    <constraint firstItem="rBl-xJ-8cK" firstAttribute="leading" secondItem="pfY-5Q-wOX" secondAttribute="trailing" constant="16.670000000000002" id="5lu-g7-Zqi"/>
+                                    <constraint firstItem="pfY-5Q-wOX" firstAttribute="top" secondItem="a3c-Rp-MUX" secondAttribute="top" constant="15" id="5uo-PV-MaA"/>
+                                    <constraint firstItem="pfY-5Q-wOX" firstAttribute="leading" relation="lessThanOrEqual" secondItem="a3c-Rp-MUX" secondAttribute="leading" priority="99" constant="62" id="Aqx-wo-KJQ"/>
+                                    <constraint firstItem="bzU-Kl-tKA" firstAttribute="top" secondItem="rBl-xJ-8cK" secondAttribute="bottom" constant="20" id="HdJ-4U-Y5Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="rBl-xJ-8cK" secondAttribute="trailing" constant="170" id="HpK-QQ-LEP"/>
+                                    <constraint firstItem="jGP-Ui-ks5" firstAttribute="centerX" secondItem="bzU-Kl-tKA" secondAttribute="centerX" id="M1i-Zu-KOn"/>
+                                    <constraint firstItem="rBl-xJ-8cK" firstAttribute="top" secondItem="a3c-Rp-MUX" secondAttribute="top" priority="999" constant="65" id="NnW-LI-vsE"/>
+                                    <constraint firstAttribute="trailing" secondItem="gbS-bP-shW" secondAttribute="trailing" priority="999" constant="101" id="QYv-Ju-cIq"/>
+                                    <constraint firstItem="bzU-Kl-tKA" firstAttribute="leading" relation="lessThanOrEqual" secondItem="a3c-Rp-MUX" secondAttribute="leading" constant="190" id="Rit-qI-1FJ"/>
+                                    <constraint firstItem="39o-b0-oNM" firstAttribute="top" secondItem="pfY-5Q-wOX" secondAttribute="bottom" constant="20" id="WBK-qo-W3b"/>
+                                    <constraint firstItem="jGP-Ui-ks5" firstAttribute="centerY" secondItem="bzU-Kl-tKA" secondAttribute="centerY" id="ZxX-il-1AJ"/>
+                                    <constraint firstItem="gbS-bP-shW" firstAttribute="top" secondItem="a3c-Rp-MUX" secondAttribute="top" constant="40" id="axR-gf-bTd"/>
+                                    <constraint firstItem="gbS-bP-shW" firstAttribute="leading" secondItem="rBl-xJ-8cK" secondAttribute="trailing" constant="18" id="fBt-HG-dFq"/>
+                                    <constraint firstItem="8C5-o3-LVO" firstAttribute="top" secondItem="a3c-Rp-MUX" secondAttribute="top" constant="74" id="je1-Jh-0jr"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bzU-Kl-tKA" secondAttribute="bottom" constant="50" id="tRS-q9-hmm"/>
+                                    <constraint firstAttribute="trailing" secondItem="bzU-Kl-tKA" secondAttribute="trailing" constant="95" id="w2G-1G-M3B"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUS-qM-ban" userLabel="Game Word View" customClass="GameWordView" customModule="RocketMan" customModuleProvider="target">
-                                <rect key="frame" x="16" y="508.33333333333326" width="343" height="60"/>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUS-qM-ban" userLabel="Game Word View" customClass="GameWordView" customModule="RocketMan" customModuleProvider="target">
+                                <rect key="frame" x="16" y="504" width="343" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="tSx-v1-V3d"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-b6-4RR" userLabel="Keyboard View" customClass="KeyboardView" customModule="RocketMan" customModuleProvider="target">
-                                <rect key="frame" x="16" y="582.33333333333337" width="343" height="190"/>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-b6-4RR" userLabel="Keyboard View" customClass="KeyboardView" customModule="RocketMan" customModuleProvider="target">
+                                <rect key="frame" x="16" y="578" width="343" height="190"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="Hiy-H8-5rJ"/>
+                                    <constraint firstAttribute="height" constant="190" id="wJ5-hM-vd8"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="OUS-qM-ban" firstAttribute="top" secondItem="a3c-Rp-MUX" secondAttribute="bottom" constant="10" id="4Zf-B9-3pP"/>
-                            <constraint firstItem="KEm-qb-Txx" firstAttribute="trailing" secondItem="Rbt-b6-4RR" secondAttribute="trailing" constant="16" id="7hO-BQ-O6h"/>
                             <constraint firstItem="UrH-bh-QRL" firstAttribute="top" secondItem="Jdz-Qc-t9e" secondAttribute="top" id="9OI-gE-y8d"/>
-                            <constraint firstAttribute="trailing" secondItem="UrH-bh-QRL" secondAttribute="trailing" id="Aax-28-Nmm"/>
-                            <constraint firstItem="KEm-qb-Txx" firstAttribute="trailing" secondItem="OUS-qM-ban" secondAttribute="trailing" constant="16" id="Bh5-5E-Pvg"/>
-                            <constraint firstItem="Rbt-b6-4RR" firstAttribute="leading" secondItem="KEm-qb-Txx" secondAttribute="leading" constant="16" id="Geq-oS-wsR"/>
-                            <constraint firstItem="91n-Km-GE1" firstAttribute="top" secondItem="KEm-qb-Txx" secondAttribute="top" constant="10" id="Kdi-x9-gGN"/>
-                            <constraint firstItem="KEm-qb-Txx" firstAttribute="trailing" secondItem="a3c-Rp-MUX" secondAttribute="trailing" constant="16" id="SYd-uG-8SH"/>
-                            <constraint firstItem="a3c-Rp-MUX" firstAttribute="leading" secondItem="KEm-qb-Txx" secondAttribute="leading" constant="16" id="VZz-uy-Ux1"/>
-                            <constraint firstItem="OUS-qM-ban" firstAttribute="leading" secondItem="KEm-qb-Txx" secondAttribute="leading" constant="16" id="aG1-9x-afu"/>
-                            <constraint firstItem="KEm-qb-Txx" firstAttribute="bottom" secondItem="Rbt-b6-4RR" secondAttribute="bottom" constant="5.6666666666666288" id="eFA-Zq-Azs"/>
-                            <constraint firstItem="a3c-Rp-MUX" firstAttribute="top" secondItem="91n-Km-GE1" secondAttribute="bottom" constant="10" id="gWm-C3-0AY"/>
-                            <constraint firstItem="a3c-Rp-MUX" firstAttribute="centerX" secondItem="KEm-qb-Txx" secondAttribute="centerX" id="hkP-vb-Qfv"/>
+                            <constraint firstItem="Jz2-4g-AXK" firstAttribute="trailing" secondItem="UrH-bh-QRL" secondAttribute="trailing" id="Aax-28-Nmm"/>
+                            <constraint firstItem="Jz2-4g-AXK" firstAttribute="trailing" secondItem="OUS-qM-ban" secondAttribute="trailing" constant="16" id="Bh5-5E-Pvg"/>
+                            <constraint firstItem="OUS-qM-ban" firstAttribute="top" secondItem="a3c-Rp-MUX" secondAttribute="bottom" id="FH3-t6-22P"/>
+                            <constraint firstItem="a3c-Rp-MUX" firstAttribute="top" secondItem="91n-Km-GE1" secondAttribute="bottom" id="KLJ-rC-Kl7"/>
+                            <constraint firstItem="91n-Km-GE1" firstAttribute="top" secondItem="Jz2-4g-AXK" secondAttribute="top" constant="10" id="LHB-dl-ThA"/>
+                            <constraint firstItem="Rbt-b6-4RR" firstAttribute="leading" secondItem="OUS-qM-ban" secondAttribute="leading" id="SQA-cW-xgO"/>
+                            <constraint firstItem="Jz2-4g-AXK" firstAttribute="trailing" secondItem="a3c-Rp-MUX" secondAttribute="trailing" id="SYd-uG-8SH"/>
+                            <constraint firstItem="a3c-Rp-MUX" firstAttribute="leading" secondItem="Jz2-4g-AXK" secondAttribute="leading" id="VZz-uy-Ux1"/>
+                            <constraint firstItem="OUS-qM-ban" firstAttribute="leading" secondItem="Jz2-4g-AXK" secondAttribute="leading" constant="16" id="aG1-9x-afu"/>
+                            <constraint firstItem="a3c-Rp-MUX" firstAttribute="centerX" secondItem="Jz2-4g-AXK" secondAttribute="centerX" id="hkP-vb-Qfv"/>
                             <constraint firstAttribute="bottom" secondItem="UrH-bh-QRL" secondAttribute="bottom" id="j3z-Cv-3Vc"/>
-                            <constraint firstItem="Rbt-b6-4RR" firstAttribute="top" secondItem="OUS-qM-ban" secondAttribute="bottom" constant="14" id="r0V-aH-ciS"/>
-                            <constraint firstItem="91n-Km-GE1" firstAttribute="leading" secondItem="KEm-qb-Txx" secondAttribute="leading" constant="16" id="u5Y-yb-9xJ"/>
-                            <constraint firstItem="UrH-bh-QRL" firstAttribute="leading" secondItem="Jdz-Qc-t9e" secondAttribute="leading" id="x9l-yH-ejs"/>
-                            <constraint firstItem="KEm-qb-Txx" firstAttribute="trailing" secondItem="91n-Km-GE1" secondAttribute="trailing" constant="16" id="yLU-3w-Sm9"/>
+                            <constraint firstItem="Jz2-4g-AXK" firstAttribute="bottom" secondItem="Rbt-b6-4RR" secondAttribute="bottom" constant="10" id="m9w-lj-JN6"/>
+                            <constraint firstItem="Rbt-b6-4RR" firstAttribute="trailing" secondItem="OUS-qM-ban" secondAttribute="trailing" id="o6e-sj-9cT"/>
+                            <constraint firstItem="OUS-qM-ban" firstAttribute="centerX" secondItem="Jz2-4g-AXK" secondAttribute="centerX" id="q02-D6-neW"/>
+                            <constraint firstItem="Rbt-b6-4RR" firstAttribute="top" secondItem="OUS-qM-ban" secondAttribute="bottom" constant="14" id="sds-dm-vAt"/>
+                            <constraint firstItem="91n-Km-GE1" firstAttribute="centerX" secondItem="Jz2-4g-AXK" secondAttribute="centerX" id="se8-Pm-Dh0"/>
+                            <constraint firstItem="UrH-bh-QRL" firstAttribute="leading" secondItem="Jz2-4g-AXK" secondAttribute="leading" id="x9l-yH-ejs"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="KEm-qb-Txx"/>
+                        <viewLayoutGuide key="safeArea" id="Jz2-4g-AXK"/>
                     </view>
                     <navigationItem key="navigationItem" title="ROCKETMAN" id="HPa-M8-sgd"/>
                     <connections>
+                        <outlet property="asteroid1" destination="pfY-5Q-wOX" id="hX8-PP-sd3"/>
+                        <outlet property="asteroid2" destination="39o-b0-oNM" id="Fll-Ky-lrI"/>
+                        <outlet property="asteroid3" destination="gbS-bP-shW" id="7hu-u3-wnd"/>
+                        <outlet property="asteroid4" destination="rBl-xJ-8cK" id="2do-RY-IuE"/>
+                        <outlet property="asteroid5" destination="8C5-o3-LVO" id="PAZ-Va-Eh1"/>
+                        <outlet property="asteroid6" destination="jGP-Ui-ks5" id="VJ1-P9-2vd"/>
                         <outlet property="gameWordView" destination="OUS-qM-ban" id="gOt-Hs-bTp"/>
                         <outlet property="guessesLeftLabel" destination="91n-Km-GE1" id="0ZB-dw-gof"/>
                         <outlet property="keyboardView" destination="Rbt-b6-4RR" id="klw-co-VXM"/>
@@ -226,7 +303,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tQF-Od-Bmp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ihn-F3-hbn">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="ihn-F3-hbn">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -241,6 +319,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="asteroid1" width="72" height="82"/>
+        <image name="asteroid2" width="64" height="73"/>
+        <image name="asteroid3" width="46" height="34"/>
+        <image name="asteroid4" width="70" height="103"/>
+        <image name="asteroid5" width="75" height="85"/>
+        <image name="asteroid6" width="67" height="62"/>
+        <image name="rocketMan" width="81" height="85"/>
         <image name="space" width="375" height="644"/>
     </resources>
 </document>
