@@ -15,10 +15,11 @@ class GameViewController: UIViewController {
     @IBOutlet var guessesLeftLabel: UILabel!
     @IBOutlet var keyboardView: KeyboardView!
     @IBOutlet var gameWordView: GameWordView!
-    
+        
     // MARK: - Properties
     
     var rocketMan: RocketMan!
+    var rocket = [UIImageView]()
 
     // MARK: - View Life Cycle
     
@@ -35,7 +36,7 @@ class GameViewController: UIViewController {
         setupKeyboardButtons()
         setupGameGuessesLabel()
         
-        // Game Word Print
+        // Game Word
         print(rocketMan.currentGame!.word)
     }
     
@@ -50,6 +51,7 @@ class GameViewController: UIViewController {
     
     private func setupGameGuessesLabel() {
         guessesLeftLabel.text = "Guesses Left: " + String(rocketMan.remainingGuesses())
+        hideAllParts()
     }
     
     private func processGame(_ game: Game.GameOutcome) {
@@ -98,6 +100,36 @@ class GameViewController: UIViewController {
             processGame(outcome)
         } catch {
            print("No Game is Being Played")
+        }
+    }
+    
+    // MARK: - RocketMan Helper Methods
+    
+    /* Function that hides all parts of RocketMan. */
+    func hideAllParts() {
+        for part in rocket {
+            part.isHidden = true
+        }
+    }
+    
+    /* Function that reveals parts of the hangman based off of the given ratio. */
+    func updateRocket(_ ratio: Double) {
+        let adjustedRatio = ratio * 6.0
+        let lastIndex = Int(adjustedRatio)
+        for index in 0..<Int(lastIndex) {
+            rocket[index].alpha = 1
+            rocket[index].isHidden = false
+        }
+        
+        // Show portion of next part if remainder
+        if (lastIndex < 6) {
+            let remainder = adjustedRatio - Double(lastIndex)
+            rocket[lastIndex].isHidden = false
+            rocket[lastIndex].alpha = CGFloat(remainder)
+        }
+        
+        // Show frown if all parts shown
+        if (ratio == 1) {
         }
     }
     

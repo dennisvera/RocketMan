@@ -10,7 +10,7 @@ import Foundation
 
 class Game {
     
-    // MARK: - Enumerations
+    // MARK: - Enums
     
     enum GameOutcome {
         case gameOver
@@ -49,7 +49,7 @@ class Game {
         }
     }
     
-    // MARK: - Returns true if the Game Ended as a Loss. Otherwise, Returns False
+    // MARK: - Returns true if the Game Ended as a Loss. Otherwise False
     
     func winGame() -> Bool {
         if (revealedLetters == wordArray.count) {

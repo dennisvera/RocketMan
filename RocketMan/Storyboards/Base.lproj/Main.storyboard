@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpt-UT-fPP" userLabel="SpaceMan Logo View">
-                                <rect key="frame" x="0.0" y="88" width="375" height="270"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROCKETMAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFN-pd-eAR">
-                                        <rect key="frame" x="20" y="110.66666666666666" width="335" height="50"/>
+                                        <rect key="frame" x="20" y="55.666666666666657" width="335" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8tH-py-4Bd"/>
                                         </constraints>
@@ -33,14 +33,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="Cim-yI-Ozf"/>
+                                    <constraint firstAttribute="height" constant="160" id="Cim-yI-Ozf"/>
                                     <constraint firstAttribute="trailing" secondItem="iFN-pd-eAR" secondAttribute="trailing" constant="20" id="YAZ-UZ-2II"/>
                                     <constraint firstItem="iFN-pd-eAR" firstAttribute="centerY" secondItem="cpt-UT-fPP" secondAttribute="centerY" id="c7s-KD-bId"/>
                                     <constraint firstItem="iFN-pd-eAR" firstAttribute="leading" secondItem="cpt-UT-fPP" secondAttribute="leading" constant="20" id="n4D-Qn-hmG"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sS6-qy-wsb">
-                                <rect key="frame" x="0.0" y="358" width="375" height="240"/>
+                                <rect key="frame" x="0.0" y="248" width="375" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsTableViewCell" rowHeight="60" id="OCg-C8-DSm" customClass="SettingsTableViewCell" customModule="RocketMan" customModuleProvider="target">
@@ -140,7 +140,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess Left: 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91n-Km-GE1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrH-bh-QRL" userLabel="Bacground View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="space" translatesAutoresizingMaskIntoConstraints="NO" id="MeM-AH-Rn8">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="MeM-AH-Rn8" firstAttribute="top" secondItem="UrH-bh-QRL" secondAttribute="top" id="GVp-hB-qib"/>
+                                    <constraint firstAttribute="trailing" secondItem="MeM-AH-Rn8" secondAttribute="trailing" id="R2M-g0-o2I"/>
+                                    <constraint firstAttribute="bottom" secondItem="MeM-AH-Rn8" secondAttribute="bottom" id="mhv-mn-kEu"/>
+                                    <constraint firstItem="MeM-AH-Rn8" firstAttribute="leading" secondItem="UrH-bh-QRL" secondAttribute="leading" id="qne-bl-0Kf"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess Left: 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91n-Km-GE1">
                                 <rect key="frame" x="16" y="98.333333333333329" width="343" height="29.999999999999986"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -152,28 +167,19 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3c-Rp-MUX" userLabel="RocketMan View">
                                 <rect key="frame" x="16" y="138.33333333333337" width="343" height="360"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RocketMan1" translatesAutoresizingMaskIntoConstraints="NO" id="wng-MO-2bB">
-                                        <rect key="frame" x="47.666666666666657" y="2" width="247.99999999999997" height="356"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="360" id="4hH-zR-3Hu"/>
-                                    <constraint firstItem="wng-MO-2bB" firstAttribute="centerY" secondItem="a3c-Rp-MUX" secondAttribute="centerY" id="WwA-eC-UYn"/>
-                                    <constraint firstItem="wng-MO-2bB" firstAttribute="top" secondItem="a3c-Rp-MUX" secondAttribute="top" constant="2" id="hMZ-O4-N46"/>
-                                    <constraint firstAttribute="bottom" secondItem="wng-MO-2bB" secondAttribute="bottom" constant="2" id="k7j-8m-qwK"/>
-                                    <constraint firstItem="wng-MO-2bB" firstAttribute="centerX" secondItem="a3c-Rp-MUX" secondAttribute="centerX" id="yeb-qC-QeO"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUS-qM-ban" userLabel="Game Word View" customClass="GameWordView" customModule="RocketMan" customModuleProvider="target">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUS-qM-ban" userLabel="Game Word View" customClass="GameWordView" customModule="RocketMan" customModuleProvider="target">
                                 <rect key="frame" x="16" y="508.33333333333326" width="343" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="tSx-v1-V3d"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-b6-4RR" userLabel="Keyboard View" customClass="KeyboardView" customModule="RocketMan" customModuleProvider="target">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-b6-4RR" userLabel="Keyboard View" customClass="KeyboardView" customModule="RocketMan" customModuleProvider="target">
                                 <rect key="frame" x="16" y="582.33333333333337" width="343" height="190"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -185,6 +191,8 @@
                         <constraints>
                             <constraint firstItem="OUS-qM-ban" firstAttribute="top" secondItem="a3c-Rp-MUX" secondAttribute="bottom" constant="10" id="4Zf-B9-3pP"/>
                             <constraint firstItem="KEm-qb-Txx" firstAttribute="trailing" secondItem="Rbt-b6-4RR" secondAttribute="trailing" constant="16" id="7hO-BQ-O6h"/>
+                            <constraint firstItem="UrH-bh-QRL" firstAttribute="top" secondItem="Jdz-Qc-t9e" secondAttribute="top" id="9OI-gE-y8d"/>
+                            <constraint firstAttribute="trailing" secondItem="UrH-bh-QRL" secondAttribute="trailing" id="Aax-28-Nmm"/>
                             <constraint firstItem="KEm-qb-Txx" firstAttribute="trailing" secondItem="OUS-qM-ban" secondAttribute="trailing" constant="16" id="Bh5-5E-Pvg"/>
                             <constraint firstItem="Rbt-b6-4RR" firstAttribute="leading" secondItem="KEm-qb-Txx" secondAttribute="leading" constant="16" id="Geq-oS-wsR"/>
                             <constraint firstItem="91n-Km-GE1" firstAttribute="top" secondItem="KEm-qb-Txx" secondAttribute="top" constant="10" id="Kdi-x9-gGN"/>
@@ -194,8 +202,10 @@
                             <constraint firstItem="KEm-qb-Txx" firstAttribute="bottom" secondItem="Rbt-b6-4RR" secondAttribute="bottom" constant="5.6666666666666288" id="eFA-Zq-Azs"/>
                             <constraint firstItem="a3c-Rp-MUX" firstAttribute="top" secondItem="91n-Km-GE1" secondAttribute="bottom" constant="10" id="gWm-C3-0AY"/>
                             <constraint firstItem="a3c-Rp-MUX" firstAttribute="centerX" secondItem="KEm-qb-Txx" secondAttribute="centerX" id="hkP-vb-Qfv"/>
+                            <constraint firstAttribute="bottom" secondItem="UrH-bh-QRL" secondAttribute="bottom" id="j3z-Cv-3Vc"/>
                             <constraint firstItem="Rbt-b6-4RR" firstAttribute="top" secondItem="OUS-qM-ban" secondAttribute="bottom" constant="14" id="r0V-aH-ciS"/>
                             <constraint firstItem="91n-Km-GE1" firstAttribute="leading" secondItem="KEm-qb-Txx" secondAttribute="leading" constant="16" id="u5Y-yb-9xJ"/>
+                            <constraint firstItem="UrH-bh-QRL" firstAttribute="leading" secondItem="Jdz-Qc-t9e" secondAttribute="leading" id="x9l-yH-ejs"/>
                             <constraint firstItem="KEm-qb-Txx" firstAttribute="trailing" secondItem="91n-Km-GE1" secondAttribute="trailing" constant="16" id="yLU-3w-Sm9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KEm-qb-Txx"/>
@@ -231,6 +241,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RocketMan1" width="248" height="365"/>
+        <image name="space" width="375" height="644"/>
     </resources>
 </document>

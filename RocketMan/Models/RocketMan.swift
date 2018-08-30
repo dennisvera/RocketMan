@@ -14,7 +14,7 @@ class RocketMan: NSObject {
     
     enum GameError : Error {
         case noCurrentGame
-        case invalidDictionaryURL
+        case invalidURL
     }
     
     enum URLError {
@@ -109,40 +109,21 @@ class RocketMan: NSObject {
             }
             
             // Split words into an array and access a random word in that array, passing it to start game
-            let words = String(data: data!, encoding: .utf8);
-            let wordArray = words!.components(separatedBy: CharacterSet.newlines);
-            let index = Int(arc4random_uniform(UInt32(wordArray.count)));
-            let word = wordArray[index];
+            let words = String(data: data!, encoding: .utf8)
+            let wordArray = words!.components(separatedBy: CharacterSet.newlines)
+            let index = Int(arc4random_uniform(UInt32(wordArray.count)))
+            let word = wordArray[index]
             if (word != "") {
-                self.urlError = nil;
-                self.startGame(word, self.difficulty);
+                self.urlError = nil
+                self.startGame(word, self.difficulty)
                 
                 // Set error since no word exists with the set parameters
             }else {
-                self.urlError = .noWord;
+                self.urlError = .noWord
             }
         })
-        task.resume();
+        task.resume()
     }
-    
-    //    func startRocketManGame() {
-    //        let difficulty = String(self.difficulty)
-    //        let wordMinLength = String(self.wordMinLength)
-    //        let wordMaxLength = String(self.wordMaxLength + 1)
-    //
-    //        // Fetch Reach API Client
-    //        ReachClient.fetchReachData(difficulty: difficulty, wordMinLength: wordMinLength, wordMaxLength: wordMaxLength) { (gameWord) in
-    //            if gameWord != "" {
-    //
-    //                print("GAMEWORD FROM API CALL: \(gameWord)")
-    //
-    //                self.urlError = nil
-    //                self.startGame(gameWord, self.difficulty)
-    //            } else {
-    //                self.urlError = .noWord
-    //            }
-    //        }
-    //    }
     
     // MARK: - Creates Current Game With Given Word and Max Number of Guesses
     
@@ -153,8 +134,8 @@ class RocketMan: NSObject {
     /* Submits letter guess to the current game. Returns a Game.GameOutcome option based on the outcome
      * of the guess. If no current game is set, throws an error. */
     func guessLetter(_ guess: Character) throws -> Game.GameOutcome {
-        if let outcome = currentGame?.guessLetter(guess) {
-            return outcome
+        if let game = currentGame?.guessLetter(guess) {
+            return game
         }
         throw GameError.noCurrentGame
     }
