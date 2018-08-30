@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--RocketMan Settings-->
+        <!--Game Settings-->
         <scene sceneID="vue-1e-qJR">
             <objects>
                 <viewController id="lcG-1D-aRO" customClass="GameSettingsViewController" customModule="RocketMan" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,29 +19,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpt-UT-fPP" userLabel="SpaceMan Logo View">
-                                <rect key="frame" x="0.0" y="88" width="375" height="160"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="241"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROCKETMAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFN-pd-eAR">
-                                        <rect key="frame" x="20" y="55.666666666666657" width="335" height="50"/>
+                                        <rect key="frame" x="60.333333333333343" y="20" width="255.00000000000003" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="8tH-py-4Bd"/>
+                                            <constraint firstAttribute="height" constant="40" id="8tH-py-4Bd"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Gxh-2E-8G0"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
-                                        <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rocketManLogo" translatesAutoresizingMaskIntoConstraints="NO" id="j44-Yt-m6B">
+                                        <rect key="frame" x="115.66666666666669" y="84" width="143" height="121"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="143" id="iD7-bj-BqA"/>
+                                            <constraint firstAttribute="height" constant="121" id="noR-uQ-pN5"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.16078431372549018" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="Cim-yI-Ozf"/>
-                                    <constraint firstAttribute="trailing" secondItem="iFN-pd-eAR" secondAttribute="trailing" constant="20" id="YAZ-UZ-2II"/>
-                                    <constraint firstItem="iFN-pd-eAR" firstAttribute="centerY" secondItem="cpt-UT-fPP" secondAttribute="centerY" id="c7s-KD-bId"/>
-                                    <constraint firstItem="iFN-pd-eAR" firstAttribute="leading" secondItem="cpt-UT-fPP" secondAttribute="leading" constant="20" id="n4D-Qn-hmG"/>
+                                    <constraint firstItem="j44-Yt-m6B" firstAttribute="centerX" secondItem="cpt-UT-fPP" secondAttribute="centerX" id="2sd-QS-8Zs"/>
+                                    <constraint firstAttribute="bottom" secondItem="j44-Yt-m6B" secondAttribute="bottom" constant="36" id="3KP-JM-eBt"/>
+                                    <constraint firstItem="iFN-pd-eAR" firstAttribute="top" secondItem="cpt-UT-fPP" secondAttribute="top" constant="20" id="9ps-Kq-5LS"/>
+                                    <constraint firstItem="j44-Yt-m6B" firstAttribute="top" secondItem="iFN-pd-eAR" secondAttribute="bottom" constant="24" id="ZPX-Nc-zmb"/>
+                                    <constraint firstItem="iFN-pd-eAR" firstAttribute="centerX" secondItem="cpt-UT-fPP" secondAttribute="centerX" id="aHr-pk-B5q"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffr-Mh-bSv">
+                                <rect key="frame" x="127.66666666666669" y="698" width="120" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="AUh-Om-P1K"/>
+                                    <constraint firstAttribute="height" constant="40" id="Qb6-uD-365"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="PLAY">
+                                    <color key="titleColor" red="0.078431372549019607" green="0.16078431372549018" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="lcG-1D-aRO" eventType="touchUpInside" id="1Ij-nX-8Kd"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sS6-qy-wsb">
-                                <rect key="frame" x="0.0" y="248" width="375" height="350"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="329" width="375" height="338"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.16078431372549018" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsTableViewCell" rowHeight="60" id="OCg-C8-DSm" customClass="SettingsTableViewCell" customModule="RocketMan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
@@ -50,23 +74,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="8nE-uA-AgO" userLabel="Settings Stack View">
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8nE-uA-AgO" userLabel="Settings Stack View">
                                                     <rect key="frame" x="10" y="0.0" width="355" height="59.666666666666664"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDc-s3-Bxb" userLabel="Title Label">
-                                                            <rect key="frame" x="0.0" y="18.666666666666664" width="221.66666666666666" height="22.666666666666664"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="0.0" y="18.666666666666671" width="217.66666666666666" height="22.333333333333329"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3R-4i-GFd">
-                                                            <rect key="frame" x="235.66666666666666" y="18.333333333333336" width="11.333333333333343" height="23.333333333333336"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="233.66666666666666" y="18" width="11.333333333333343" height="24"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="NcO-pi-RJU">
                                                             <rect key="frame" x="261" y="15.333333333333336" width="94" height="29"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </stepper>
                                                     </subviews>
                                                 </stackView>
@@ -79,6 +105,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="8nE-uA-AgO" secondAttribute="trailing" constant="10" id="rEe-sB-M0T"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.078431372549019607" green="0.16078431372549018" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="settingsNumberLabel" destination="W3R-4i-GFd" id="qTO-Gq-XB3"/>
                                             <outlet property="settingsStepper" destination="NcO-pi-RJU" id="oGU-Jh-1dh"/>
@@ -91,47 +118,33 @@
                                     <outlet property="delegate" destination="lcG-1D-aRO" id="Wv0-1T-rhU"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffr-Mh-bSv">
-                                <rect key="frame" x="60" y="658" width="255" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Qb6-uD-365"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.078431372549019607" green="0.16078431372549018" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="playButtonTapped:" destination="lcG-1D-aRO" eventType="touchUpInside" id="1Ij-nX-8Kd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.078431372549019607" green="0.16078431372549018" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="pif-3B-hbK" firstAttribute="bottom" secondItem="Ffr-Mh-bSv" secondAttribute="bottom" constant="40" id="2y0-ax-g0k"/>
                             <constraint firstItem="pif-3B-hbK" firstAttribute="trailing" secondItem="cpt-UT-fPP" secondAttribute="trailing" id="3oU-yp-tWQ"/>
-                            <constraint firstItem="Ffr-Mh-bSv" firstAttribute="leading" secondItem="pif-3B-hbK" secondAttribute="leading" constant="60" id="ByV-2B-Kkg"/>
-                            <constraint firstItem="pif-3B-hbK" firstAttribute="trailing" secondItem="Ffr-Mh-bSv" secondAttribute="trailing" constant="60" id="H1x-90-gJ9"/>
                             <constraint firstItem="pif-3B-hbK" firstAttribute="trailing" secondItem="sS6-qy-wsb" secondAttribute="trailing" id="P0j-hI-cxJ"/>
-                            <constraint firstItem="sS6-qy-wsb" firstAttribute="top" secondItem="cpt-UT-fPP" secondAttribute="bottom" id="Pcc-fw-3FM"/>
-                            <constraint firstItem="Ffr-Mh-bSv" firstAttribute="top" secondItem="sS6-qy-wsb" secondAttribute="bottom" constant="60" id="Pqn-24-6Aw"/>
+                            <constraint firstItem="sS6-qy-wsb" firstAttribute="top" secondItem="cpt-UT-fPP" secondAttribute="bottom" id="QLX-Nc-Fb9"/>
                             <constraint firstItem="cpt-UT-fPP" firstAttribute="top" secondItem="pif-3B-hbK" secondAttribute="top" id="UQI-yB-3BK"/>
+                            <constraint firstItem="Ffr-Mh-bSv" firstAttribute="top" secondItem="sS6-qy-wsb" secondAttribute="bottom" constant="31" id="Zy0-PL-HB3"/>
                             <constraint firstItem="cpt-UT-fPP" firstAttribute="leading" secondItem="pif-3B-hbK" secondAttribute="leading" id="ckP-BI-wZT"/>
-                            <constraint firstItem="pif-3B-hbK" firstAttribute="bottom" secondItem="Ffr-Mh-bSv" secondAttribute="bottom" constant="60" id="dkp-fM-gNa"/>
+                            <constraint firstItem="Ffr-Mh-bSv" firstAttribute="centerX" secondItem="pif-3B-hbK" secondAttribute="centerX" id="mWo-M1-Sgq"/>
                             <constraint firstItem="sS6-qy-wsb" firstAttribute="leading" secondItem="pif-3B-hbK" secondAttribute="leading" id="omX-8V-TyL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pif-3B-hbK"/>
                     </view>
-                    <navigationItem key="navigationItem" title="RocketMan Settings" id="2jk-0r-bE2" userLabel="Game Settings">
+                    <navigationItem key="navigationItem" title="Game Settings" id="2jk-0r-bE2" userLabel="Game Settings">
                         <barButtonItem key="backBarButtonItem" systemItem="refresh" id="U9L-xc-cRW"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="playButton" destination="Ffr-Mh-bSv" id="cLa-sp-j2E"/>
                         <outlet property="tableView" destination="sS6-qy-wsb" id="M7f-Jp-n3s"/>
                         <segue destination="Gl2-zz-PJE" kind="show" identifier="GameViewController" id="jB1-50-WVE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kr2-Fh-gCv" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380" y="166"/>
+            <point key="canvasLocation" x="1380" y="165.51724137931035"/>
         </scene>
         <!--ROCKETMAN-->
         <scene sceneID="3jH-0c-pGq">
@@ -307,6 +320,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="ihn-F3-hbn">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -326,6 +340,7 @@
         <image name="asteroid5" width="75" height="85"/>
         <image name="asteroid6" width="67" height="62"/>
         <image name="rocketMan" width="81" height="85"/>
+        <image name="rocketManLogo" width="143" height="121"/>
         <image name="space" width="375" height="644"/>
     </resources>
 </document>

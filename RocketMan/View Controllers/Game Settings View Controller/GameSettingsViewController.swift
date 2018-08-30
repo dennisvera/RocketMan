@@ -13,7 +13,8 @@ final class GameSettingsViewController: UIViewController {
     // MARK: Outlets
     
     @IBOutlet var tableView: UITableView!
-
+    @IBOutlet var playButton: UIButton!
+    
     // MARK: - Properties
     
     let rocketMan = RocketMan.sharedInstance
@@ -31,11 +32,20 @@ final class GameSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        setupView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    // MARK: - View Methods
+    
+    private func setupView() {
+        playButton.clipsToBounds = true
+        playButton.layer.cornerRadius = 10
     }
     
     // MARK: - Navigation
