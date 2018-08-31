@@ -22,13 +22,13 @@ At the end of each game, the player has an option to restart the game and engage
 
 ## Game Features
 * Single Player Game:
- - Generate words based off of 3 options: Difficulty (1-10), Word Length Minimum (2-12), Word Length Maximum (2-12)
+   - Generate words based off of 3 options: Difficulty (1-10), Word Length Minimum (2-12), Word Length Maximum (2-12)
 * Keyboard
- - Keys of already guessed letters are automatically disabled
+   - Keys of already guessed letters are automatically disabled
 * Updates RocketMan Images As You Guess
- - Asteroids images unHide as you guess incorrectly
+   - Asteroids images unHide as you guess incorrectly
 * Autofill Secret Word On Loss
- - In case of a loss, missing letters will appear in red
+   - In case of a loss, missing letters will appear in red
 
 ## Author
 Dennis Vera
