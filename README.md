@@ -1,6 +1,8 @@
 ## RocketMan
 A Hangman Game For People Who Like Space!!
 
+![Welcome Screen](https://github.com/bmanjuu/HPHangman/blob/master/HPHangmanWelcomeScreen.png)   ![Gameplay](https://github.com/bmanjuu/HPHangman/blob/master/HPHangmangGameScreen.png)
+
 ## Requirements
 This game is an iOS app that requires iOS 10.2+ to run. 
 
@@ -22,7 +24,5 @@ Dennis Vera
 * Alyssa Mark, for making so many yummy dinners so that I can continue to work on the app. 
 
 ## Resources
-* Images were obtained from:
-* [Shutterstock - By PremiumArt](https://www.shutterstock.com/image-vector/vector-flat-cosmos-design-background-cute-579763333)
-* [Shutterstock - By REANEW](https://www.shutterstock.com/image-vector/vector-flat-asteroids-planet-earth-space-712978225)
+* Images were obtained from: [Shutterstock-PremiumArt](https://www.shutterstock.com/image-vector/vector-flat-cosmos-design-background-cute-579763333) [Shutterstock-Reanew](https://www.shutterstock.com/image-vector/vector-flat-asteroids-planet-earth-space-712978225)
 * App Icon was made by PremiumArt's from https://www.shutterstock.com/g/seamni_sun
