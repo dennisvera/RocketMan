@@ -12,7 +12,6 @@
 		E10A0EF621333A75000AD1C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10A0EF421333A75000AD1C1 /* Main.storyboard */; };
 		E10A0EF821333A7F000AD1C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10A0EF721333A7F000AD1C1 /* Assets.xcassets */; };
 		E10A0EFB21333A7F000AD1C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10A0EF921333A7F000AD1C1 /* LaunchScreen.storyboard */; };
-		E10A0F0921333B8A000AD1C1 /* ReachClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F0821333B8A000AD1C1 /* ReachClient.swift */; };
 		E10A0F0C21333BD5000AD1C1 /* RocketMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F0B21333BD5000AD1C1 /* RocketMan.swift */; };
 		E10A0F12213348D6000AD1C1 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A0F11213348D6000AD1C1 /* SettingsTableViewCell.swift */; };
 		E1CEC6DC21349D7B00B32341 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC6DB21349D7B00B32341 /* Game.swift */; };
@@ -30,7 +29,6 @@
 		E10A0EF721333A7F000AD1C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E10A0EFA21333A7F000AD1C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E10A0EFC21333A7F000AD1C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E10A0F0821333B8A000AD1C1 /* ReachClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachClient.swift; sourceTree = "<group>"; };
 		E10A0F0B21333BD5000AD1C1 /* RocketMan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketMan.swift; sourceTree = "<group>"; };
 		E10A0F11213348D6000AD1C1 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		E1CEC6DB21349D7B00B32341 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				E10A0F0221333AA4000AD1C1 /* Application Delegate */,
-				E10A0F0721333B57000AD1C1 /* Network Managers */,
 				E10A0F1321335978000AD1C1 /* Models */,
 				E10A0F0321333AE8000AD1C1 /* View Controllers */,
 				E10A0F0421333AF4000AD1C1 /* Storyboards */,
@@ -121,14 +118,6 @@
 				E10A0EFC21333A7F000AD1C1 /* Info.plist */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E10A0F0721333B57000AD1C1 /* Network Managers */ = {
-			isa = PBXGroup;
-			children = (
-				E10A0F0821333B8A000AD1C1 /* ReachClient.swift */,
-			);
-			path = "Network Managers";
 			sourceTree = "<group>";
 		};
 		E10A0F0D213346EA000AD1C1 /* Game Settings View Controller */ = {
@@ -259,7 +248,6 @@
 				E1CEC6E2213618B200B32341 /* KeyboardView.swift in Sources */,
 				E1CEC6E42136190200B32341 /* KeyBoardButton.swift in Sources */,
 				E10A0F0C21333BD5000AD1C1 /* RocketMan.swift in Sources */,
-				E10A0F0921333B8A000AD1C1 /* ReachClient.swift in Sources */,
 				E10A0F12213348D6000AD1C1 /* SettingsTableViewCell.swift in Sources */,
 				E10A0EF121333A75000AD1C1 /* AppDelegate.swift in Sources */,
 				E1CEC6DC21349D7B00B32341 /* Game.swift in Sources */,

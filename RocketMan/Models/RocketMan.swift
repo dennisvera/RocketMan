@@ -78,41 +78,48 @@ class RocketMan: NSObject {
     // MARK: - Start Game with Random Word from Reach API
     
     func startRocketManGame() {
-        // Create URL based with settings
-        let baseURL = "http://app.linkedin-reach.io/words"
-        let dif = "?difficulty=" + String(difficulty)
-        let min = "&minLength=" + String(wordMinLength)
-        let max = "&maxLength=" + String(wordMaxLength + 1)
+        let difficulty = String(self.difficulty)
+        let wordMinLength = String(self.wordMinLength)
+        let wordMaxLength = String(self.wordMaxLength + 1)
         
-        guard let url = URL(string: baseURL + dif + min + max) else { return }
+        let urlString = "http://app.linkedin-reach.io/words?difficulty=\(difficulty)&minLength=\(wordMinLength)&maxLength=\(wordMaxLength)"
         
-        // Create session and pull random word from
-        urlError = .waiting;
-        let session = URLSession.shared;
-        let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
-            if (error != nil) {
-                print("Error retrieving word dictionary.")
-                print(error!)
-                self.urlError = .noResponse
-                return
+        guard let url = URL(string: urlString) else { fatalError("Invalid URL") }
+        
+        let urlRequest = URLRequest(url: url)
+        
+        // Create Session
+        urlError = .waiting
+        let session = URLSession.shared
+        
+        // Create Data Task
+        let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
+            if let response = response as? HTTPURLResponse {
+                print("Response Status Code: \(response.statusCode)\n")
             }
             
-            // Split words into an array and access a random word in that array, passing it to start game
-            let words = String(data: data!, encoding: .utf8)
-            let wordArray = words!.components(separatedBy: CharacterSet.newlines)
-            let index = Int(arc4random_uniform(UInt32(wordArray.count)))
-            let word = wordArray[index]
-            if (word != "") {
-                self.urlError = nil
-                self.startGame(word, self.difficulty)
+            if let error = error {
+                print("Unable To Fetch Reach Data: \(error)\n")
+            } else {
+                guard let data = data else { fatalError("Unable to get data: \(String(describing: error?.localizedDescription))") }
                 
-                // Set error since no word exists with the set parameters
-            }else {
-                self.urlError = .noWord
+                // Split words into an array and access a random word in that array, passing it to start game
+                let words = String(data: data, encoding: .utf8)
+                let wordArray = words!.components(separatedBy: CharacterSet.newlines)
+                let index = Int(arc4random_uniform(UInt32(wordArray.count)))
+                let word = wordArray[index]
+                if (word != "") {
+                    self.urlError = nil
+                    self.startGame(word, self.difficulty)
+                } else {
+                    self.urlError = .noWord
+                }
             }
-        })
-        task.resume()
+        }
+        
+        dataTask.resume()
     }
+    
     
     // MARK: - Creates Current Game With Given Word and Max Number of Guesses
     
@@ -120,8 +127,8 @@ class RocketMan: NSObject {
         currentGame = Game(word: word, guessMaximum: guessMaximum, difficulty: difficulty)
     }
     
-    /* Submits letter guess to the current game. Returns a Game.GameOutcome option based on the outcome
-     * of the guess. If no current game is set, throws an error. */
+    // MARK: - Submits Letter Guess To The Current Game. If No Current Game is Set, Throws An Error
+    
     func guessLetter(_ guess: Character) throws -> Game.GameOutcome {
         if let game = currentGame?.guessLetter(guess) {
             return game
@@ -130,3 +137,11 @@ class RocketMan: NSObject {
     }
     
 }
+
+
+
+
+
+
+
+

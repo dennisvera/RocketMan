@@ -45,7 +45,7 @@ class GameViewController: UIViewController {
         setupGameGuessesLabel()
         setupAsteroids()
         
-        // Game Word
+        // Game Word Print
         print(rocketMan.currentGame!.word)
     }
     

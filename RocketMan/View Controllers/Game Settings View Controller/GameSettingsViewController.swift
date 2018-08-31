@@ -15,9 +15,11 @@ final class GameSettingsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var playButton: UIButton!
     
-    // MARK: - Properties
+    // MARK: - Type Instance
     
     let rocketMan = RocketMan.sharedInstance
+    
+    // MARK: - Properties
 
     var difficultyLabel: UILabel!
     var difficultyStepper: UIStepper!
@@ -25,8 +27,6 @@ final class GameSettingsViewController: UIViewController {
     var wordMinLengthStepper: UIStepper!
     var wordMaxLengthLabel: UILabel!
     var wordMaxLengthStepper: UIStepper!
-    var guessMaximumLabel: UILabel!
-    var guessMaximumStepper: UIStepper!
     
     // MARK: - View Life Cycle
     
@@ -95,7 +95,7 @@ extension GameSettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -113,15 +113,6 @@ extension GameSettingsViewController: UITableViewDataSource {
     private func configure(_ cell: SettingsTableViewCell, at indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            cell.settingsTitleLabel.text = "Guess Limit"
-            cell.settingsNumberLabel.text = String(rocketMan.guessMaximum)
-            guessMaximumLabel = cell.settingsNumberLabel
-            guessMaximumStepper = cell.settingsStepper
-            cell.settingsStepper.addTarget(self, action: #selector(guessMaximum(_:)), for: .allTouchEvents)
-            cell.settingsStepper.maximumValue = 6
-            cell.settingsStepper.minimumValue = 1
-            cell.settingsStepper.value = Double(rocketMan.guessMaximum)
-        case 1:
             cell.settingsTitleLabel.text = "Difficulty"
             cell.settingsNumberLabel.text = String(rocketMan.difficulty)
             difficultyLabel = cell.settingsNumberLabel
@@ -130,7 +121,7 @@ extension GameSettingsViewController: UITableViewDataSource {
             cell.settingsStepper.maximumValue = 10
             cell.settingsStepper.minimumValue = 1
             cell.settingsStepper.value = Double(rocketMan.difficulty)
-        case 2:
+        case 1:
             cell.settingsTitleLabel.text = "Minimum Word Length"
             cell.settingsNumberLabel.text = String(rocketMan.wordMinLength)
             wordMinLengthLabel = cell.settingsNumberLabel
@@ -139,7 +130,7 @@ extension GameSettingsViewController: UITableViewDataSource {
             cell.settingsStepper.maximumValue = 12
             cell.settingsStepper.minimumValue = 2
             cell.settingsStepper.value = Double(rocketMan.wordMinLength)
-        case 3:
+        case 2:
             cell.settingsTitleLabel.text = "Maximum Word Length"
             cell.settingsNumberLabel.text = String(rocketMan.wordMaxLength)
             wordMaxLengthLabel = cell.settingsNumberLabel
@@ -189,13 +180,6 @@ extension GameSettingsViewController: UITableViewDataSource {
             wordMinLengthStepper.value = Double(newWordMaximumLenghtValue)
             rocketMan.wordMinLength = newWordMaximumLenghtValue
         }
-    }
-    
-    // MARK: - Guess Stepper Updates Guess value
-    @objc private func guessMaximum(_ sender: UIStepper) {
-        let newGuessMaximumValue = Int(sender.value)
-        guessMaximumLabel.text = String(newGuessMaximumValue)
-        rocketMan.guessMaximum = newGuessMaximumValue
     }
     
 }
