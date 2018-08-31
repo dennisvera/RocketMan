@@ -18,7 +18,7 @@ The player will be tasked with saving RocketMan's shuttle from an asteroid showe
 
 RocketMan travels through space while asteroids threaten to hit and blow up his aircraft. The player will be presented with a secret word to guess (length, difficulty, and number of guesses are customizable on the homepage), and every wrong letter that they submit will result in an asteroid coming closer to RocketMan. 
 
-If the player does not guess the word in the set amount of tries, RocketMan's ship will be hit and the player will lose. If the player guesses correctly before his tries run out, RocketMan will be saved! At the end of each game, the player has an option to restart the game and engage in an another epic round of intergalactic space travel.
+If the player does not guess the word in the set amount of tries, RocketMan's ship will be hit and the player will lose. If the player guesses correctly before their tries run out, RocketMan will be saved! At the end of each game, the player has an option to restart the game and engage in an another epic round of intergalactic space travel.
 
 ## Game Features
 * Single Player Game
