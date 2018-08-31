@@ -12,7 +12,7 @@ class GameViewController: UIViewController {
     
     // MARK: - Outlets
 
-    @IBOutlet var guessesLeftLabel: UILabel!
+    @IBOutlet var gameBoardLabel: UILabel!
     @IBOutlet var keyboardView: KeyboardView!
     @IBOutlet var gameWordView: GameWordView!
     
@@ -54,11 +54,17 @@ class GameViewController: UIViewController {
     private func setupGameWordView() {
         guard let gameWord = rocketMan.currentGame?.word else { return }
         gameWordView.word = gameWord
+        gameWordView.alpha = 0.6
+        gameWordView.layer.masksToBounds = true
+        gameWordView.layer.cornerRadius = 5
         gameWordView.setNeedsLayout()
     }
     
     private func setupGameGuessesLabel() {
-        guessesLeftLabel.text = "Guesses Left: " + String(rocketMan.remainingGuesses())
+        gameBoardLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 20.0)
+        gameBoardLabel.layer.masksToBounds = true
+        gameBoardLabel.layer.cornerRadius = 5
+        gameBoardLabel.text = "Guesses Left: " + String(rocketMan.remainingGuesses())
     }
     
     private func setupAsteroids() {
@@ -69,23 +75,27 @@ class GameViewController: UIViewController {
     private func processGame(_ game: Game.GameOutcome) {
         // Update game word
         gameWordView.updateWord(rocketMan.currentGame!.guessArray)
-        guessesLeftLabel.text = "Guesses Left: " + String(rocketMan.remainingGuesses())
+        gameBoardLabel.text = "Guesses Left: " + String(rocketMan.remainingGuesses())
         updateAsteroidViews(rocketMan.remainingGuessesRatio())
         
         switch game {
         case .lossGuess:
             disableKeyboard()
             gameWordView.fillWord(rocketMan.currentGame!.wordArray)
-            guessesLeftLabel.textColor = .red
-            guessesLeftLabel.backgroundColor = .white
-            guessesLeftLabel.alpha = 1.0
-            guessesLeftLabel.text = "You lose!"
+            gameBoardLabel.textColor = .red
+            gameBoardLabel.backgroundColor = .white
+            gameBoardLabel.layer.masksToBounds = true
+            gameBoardLabel.layer.cornerRadius = 5
+            gameBoardLabel.alpha = 1.0
+            gameBoardLabel.text = "Try Again!"
         case .winGuess:
             disableKeyboard()
-            guessesLeftLabel.textColor = .black
-            guessesLeftLabel.backgroundColor = .white
-            guessesLeftLabel.alpha = 1.0
-            guessesLeftLabel.text = "You win!"
+            gameBoardLabel.textColor = .red
+            gameBoardLabel.backgroundColor = .white
+            gameBoardLabel.layer.masksToBounds = true
+            gameBoardLabel.layer.cornerRadius = 5
+            gameBoardLabel.alpha = 1.0
+            gameBoardLabel.text = "RocketMan!"
             
         default:
             break
@@ -96,8 +106,9 @@ class GameViewController: UIViewController {
     
     private func setupKeyboardButtons() {
         for button in keyboardView.buttons {
+            button.alpha = 0.6
             button.backgroundColor = .white
-            button.alpha = 0.7
+            button.layer.cornerRadius = 5
             button.addTarget(self, action: #selector(keyboardTapped(_:)), for: .touchUpInside)
         }
     }
@@ -109,7 +120,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    // MARK: - Keyboard Button Tapped, Letter Passed to Game
+    // MARK: - Sets Keyboard Button Color When Tapped
     @objc private func keyboardTapped(_ sender: KeyboardButton) {
         let character = sender.key
         sender.isEnabled = false

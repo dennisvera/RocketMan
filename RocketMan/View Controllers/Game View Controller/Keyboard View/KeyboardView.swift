@@ -22,7 +22,8 @@ class KeyboardView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.backgroundColor = UIColor.clear
+        self.alpha = 0.9
+        self.backgroundColor = .clear
         
         for character in characters {
             let newButton = KeyboardButton()
@@ -41,7 +42,8 @@ class KeyboardView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor.clear
+        self.alpha = 0.9
+        self.backgroundColor = .clear
         
         for character in characters {
             let newButton = KeyboardButton()
@@ -87,7 +89,7 @@ class KeyboardView: UIView {
         for index in 19..<26 {
             let button = buttons[index]
             let adjustedIndex = index - 19
-            let extraSpace = buttonWidth / 2 + spacing * 18
+            let extraSpace = buttonWidth / 2 + spacing * 18.5
             let x = extraSpace + buttonWidth * CGFloat(adjustedIndex) + spacing * CGFloat(adjustedIndex)
             button.frame = CGRect(x: x, y: buttonHeight * 2 + rowSpacing * 2, width: buttonWidth, height: buttonHeight)
         }

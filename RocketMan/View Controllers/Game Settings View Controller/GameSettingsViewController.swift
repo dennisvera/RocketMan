@@ -118,7 +118,7 @@ extension GameSettingsViewController: UITableViewDataSource {
             guessMaximumLabel = cell.settingsNumberLabel
             guessMaximumStepper = cell.settingsStepper
             cell.settingsStepper.addTarget(self, action: #selector(guessMaximum(_:)), for: .allTouchEvents)
-            cell.settingsStepper.maximumValue = 10
+            cell.settingsStepper.maximumValue = 6
             cell.settingsStepper.minimumValue = 1
             cell.settingsStepper.value = Double(rocketMan.guessMaximum)
         case 1:

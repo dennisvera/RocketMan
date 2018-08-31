@@ -20,12 +20,12 @@ class GameWordView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.backgroundColor = UIColor.white
         self.alpha = 0.7
+        self.backgroundColor = .white
         
         for _ in 0..<12 {
             let label = UILabel()
-            label.font = UIFont.systemFont(ofSize: 24)
+            label.font = UIFont(name: "HelveticaNeue-Medium", size: 24.0)
             label.adjustsFontSizeToFitWidth = true
             label.textAlignment = .center
             label.text = "_"
@@ -46,6 +46,7 @@ class GameWordView: UIView {
             let labelWidth: CGFloat = 20.0
             var margin = (self.frame.width - spacing * length - labelWidth * length) / 2
             margin += spacing / 2
+            
             for index in 0..<Int(length) {
                 let label = labelArray[index]
                 let x = margin + labelWidth * CGFloat(index) + spacing * CGFloat(index)
@@ -54,7 +55,7 @@ class GameWordView: UIView {
         }
     }
     
-    // MARK: - Functions
+    // MARK: - Helper Methods
     
     func updateWord(_ array: [Character]) {
         for (index, character) in array.enumerated() {
