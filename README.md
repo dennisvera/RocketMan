@@ -14,20 +14,21 @@ Download this project and run using the latest version of Xcode.
 * Written in Swift 4.1
 
 ## Description
-The player is tasked with saving RocketMan from being hit by an asteroid in playing this space-themed version of Hangman. 
+The player is tasked with saving RocketMan from being hit by a asteroids in playing this space-themed version of Hangman. 
+
+In this game, the player is presented with a concealed word (indicated by a series of underscores). RocketMan travels in space while asteroids threaten to blow up his rocket. Each wrong guess puts Rocketman in closer danger of being hit by an asteroid. If the player makes six mistakes RocketMan's ship wil be blown to pieces...solve the word problem and save RocketMan!  
+
+At the end of each game, the player has an option to restart the game and engage in an another epic space travel. 
 
 ## Game Features
 * Single Player Game
-  * Generate words based off of 3 options: Difficulty (1-10), Word Length Minimum (2-12), Word Length Maximum (2-12)
+-Generate words based off of 3 options: Difficulty (1-10), Word Length Minimum (2-12), Word Length Maximum (2-12)
 * Keyboard
-  * Keys of already guessed letters are automatically disabled
+-Keys of already guessed letters are automatically disabled
 * Updates RocketMan Images As You Guess
-  * Asteroids images unHide as you guess incorrectly
+-Asteroids images unHide as you guess incorrectly
 * Autofill Secret Word On Loss
-  * In case of a loss, missing letters will appear in red
-
-* To Do:
-  * Advanced Statistic Tracking
+-In case of a loss, missing letters will appear in red
 
 ## Author
 Dennis Vera
