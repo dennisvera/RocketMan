@@ -1,7 +1,7 @@
 ## RocketMan
 A Hangman Game For People Who Like Space!!
 
-![Welcome Screen](https://github.com/dennisvera/RocketMan/blob/master/Images/RocketMan1.png)   ![Gameplay](https://github.com/dennisvera/RocketMan/blob/master/Images/RocketMan2.png)
+![Game Settings Screen](https://github.com/dennisvera/RocketMan/blob/master/Images/RocketMan1.png)   ![Gameplay](https://github.com/dennisvera/RocketMan/blob/master/Images/RocketMan2.png)
 
 ## Requirements
 This game is an iOS app that requires iOS 10.2+ to run. 
@@ -21,12 +21,12 @@ In this game, RocketMan travels through space while asteroids threaten to blow u
 At the end of each game, the player has an option to restart the game and engage in an another epic space travel. 
 
 ## Game Features
-* Single Player Game:
+* Single Player Game
    - Generate words based off of 3 options: Difficulty (1-10), Word Length Minimum (2-12), Word Length Maximum (2-12)
 * Keyboard
-   - Keys of already guessed letters are automatically disabled
-* Updates RocketMan Images As You Guess
-   - Asteroids images unHide as you guess incorrectly
+   - Custom Keyboard. Keys of already guessed letters are automatically disabled
+* Updates RocketMan Images As You Guess Secret Word
+   - Asteroids images un-hide as you guess incorrectly
 * Autofill Secret Word On Loss
    - In case of a loss, missing letters will appear in red
 
