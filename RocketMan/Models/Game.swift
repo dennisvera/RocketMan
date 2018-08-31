@@ -42,7 +42,7 @@ class Game {
         self.guessMaximum = guessMaximum
         self.difficulty = difficulty
         
-        //Set up arrays for the given word
+        //Set up arrays for the selected word
         for letter in uppercasedWord.characters {
             wordArray.append(letter)
             guessArray.append("_")
@@ -67,7 +67,7 @@ class Game {
         return false
     }
     
-    // MARK: - Given a Character, will update guess current status of the guess array
+    // MARK: - Given a Character, will update guess current status to the guess array
     
     func guessLetter(_ guess: Character) -> GameOutcome {
         // Game already over
@@ -102,7 +102,7 @@ class Game {
     // MARK: - Selects Word With Guess And Updates The Guess Array. If The Guess is The Game Word, Return True
     
     private func guessCheck(_ guess: Character) -> Bool {
-        var correctGuess = false;
+        var correctGuess = false
         for (index, letter) in wordArray.enumerated() {
             if (letter == guess) {
                 correctGuess = true
@@ -113,46 +113,14 @@ class Game {
         return correctGuess
     }
     
-    // MARK: - Guess the Game Word. Given a String, checks to see if it matches the game word
-    
-    func guessWord(_ guess: String) -> GameOutcome {
-        // Game already over
-        if gameOver { return .gameOver }
-        
-        // Uppercase entire guess
-        let guess = guess.uppercased()
-        
-        // Check if guess is correct
-        guessNumber += 1
-        if (guess == word) {
-            revealAll()
-            gameOver = true
-            return .winGuess
-        }
-        
-        // Check if a losing guess, otherwise incorrect guess
-        incorrectGuessNumber += 1
-        if lossGame() {
-            gameOver = true
-            return .lossGuess
-        }
-        return .incorrectGuess
-    }
-    
-    // MARK: - Presents All Words In The Guess Array
-    
-    private func revealAll() {
-        guessArray = wordArray
-    }
-    
-    // MARK: - Returns a String From GuessArray. Underscores Represent Letters Of The Word That Have Not Yet Been Guessed
+    // MARK: - Returns Character From GuessArray. Underscores Represent Letters of the Word That Have Not Yet Been Guessed
     
     func getCurrentGuess() -> String {
-        var string = ""
+        var charcterSelected = ""
         for character in guessArray {
-            string += String(character)
+            charcterSelected += String(character)
         }
-        return string
+        return charcterSelected
     }
     
 }

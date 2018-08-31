@@ -63,18 +63,6 @@ class RocketMan: NSObject {
         return false
     }
     
-    // MARK: - Returns True if Current Game is On, Otherwise False
-    
-    func hasGame() -> Bool {
-        return currentGame != nil
-    }
-    
-    // MARK: - Clear Current Game
-    
-    func clearGame() {
-        currentGame = nil
-    }
-    
     // MARK: - Returns Number of Guesses Remaining
     
     func remainingGuesses() -> Int {
@@ -88,24 +76,25 @@ class RocketMan: NSObject {
     }
     
     // MARK: - Start Game with Random Word from Reach API
+    
     func startRocketManGame() {
-        // Create dictionary URL based off of current options
+        // Create URL based with settings
         let baseURL = "http://app.linkedin-reach.io/words"
-        let dif = "?difficulty=" + String(difficulty);
-        let min = "&minLength=" + String(wordMinLength);
-        let max = "&maxLength=" + String(wordMaxLength + 1);
-        let url = URL(string: baseURL + dif + min + max)!;
+        let dif = "?difficulty=" + String(difficulty)
+        let min = "&minLength=" + String(wordMinLength)
+        let max = "&maxLength=" + String(wordMaxLength + 1)
         
-        // Create session and pull random word from dictionary
+        guard let url = URL(string: baseURL + dif + min + max) else { return }
+        
+        // Create session and pull random word from
         urlError = .waiting;
         let session = URLSession.shared;
         let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
-            // Break and print if error occurs
             if (error != nil) {
-                print("Error retrieving word dictionary.");
-                print(error!);
-                self.urlError = .noResponse;
-                return;
+                print("Error retrieving word dictionary.")
+                print(error!)
+                self.urlError = .noResponse
+                return
             }
             
             // Split words into an array and access a random word in that array, passing it to start game
