@@ -60,24 +60,19 @@ final class GameSettingsViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func playButtonTapped(_ sender: Any) {
+        // Start Game
         rocketMan.startRocketManGame()
         
         // Wait for response from URL session
         while (rocketMan.urlError == .waiting) { }
         // Check if there is an error in obtaining a word with the given parameters
         if (rocketMan.urlError == .noWord) {
-            let noWordAlert = UIAlertController(title: "No Word Found", message: "Change difficulty or word length and try again.", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-            noWordAlert.addAction(okButton)
-            present(noWordAlert, animated: true, completion: nil)
+            showAlert(with: "No Word Found", and: "Change difficulty or word length and try again.")
             return
             
             // Check if there is an error in reaching the server
         } else if (rocketMan.urlError == .noResponse) {
-            let noResponseAlert = UIAlertController(title: "Server Unavailable", message: "Make sure you are connected to the internet.", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-            noResponseAlert.addAction(okButton)
-            present(noResponseAlert, animated: true, completion: nil)
+            showAlert(with: "Unable to Fetch Word List Data", and: "Please make sure your device is connected over Wi-Fi or cellular.")
             return
         }
         

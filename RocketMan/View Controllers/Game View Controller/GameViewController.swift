@@ -138,14 +138,14 @@ class GameViewController: UIViewController {
     // MARK: - RocketMan Helper Methods
     
     // MARK: - Hide all asteroids
-    func hideAllAsteroids() {
+    private func hideAllAsteroids() {
         for asteroid in asteroids {
             asteroid.isHidden = true
         }
     }
     
    // MARK: - Show Asteroids
-    func updateAsteroidViews(_ ratio: Double) {
+    private func updateAsteroidViews(_ ratio: Double) {
         let adjustedRatio = ratio * 6.0
         let lastIndex = Int(adjustedRatio)
         for index in 0..<Int(lastIndex) {

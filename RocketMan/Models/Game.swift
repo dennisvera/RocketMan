@@ -42,14 +42,14 @@ class Game {
         self.guessMaximum = guessMaximum
         self.difficulty = difficulty
         
-        //Set up arrays for the selected word
+        // Set Up Arrays For Selected Word
         for letter in uppercasedWord.characters {
             wordArray.append(letter)
             guessArray.append("_")
         }
     }
     
-    // MARK: - Returns true if the Game Ended as a Win. Otherwise False
+    // MARK: - Returns True if Player Wins. Otherwise False
     
     func winGame() -> Bool {
         if (revealedLetters == wordArray.count) {
@@ -58,7 +58,7 @@ class Game {
         return false
     }
     
-    // MARK: - Returns true if the Game Ended as a Lose. Otherwise False
+    // MARK: - Returns True if Player Lost. Otherwise False
 
     func lossGame() -> Bool {
         if (incorrectGuessNumber == guessMaximum) {
@@ -67,10 +67,10 @@ class Game {
         return false
     }
     
-    // MARK: - Given a Character, will update guess current status to the guess array
+    // MARK: - Given a Character, Will Update Guess Letter to Guess Array
     
     func guessLetter(_ guess: Character) -> GameOutcome {
-        // Game already over
+        // Game is over
         if gameOver { return .gameOver }
         
         // Already guessed

@@ -75,7 +75,7 @@ class RocketMan: NSObject {
         return Double(currentGame!.incorrectGuessNumber) / Double(currentGame!.guessMaximum)
     }
     
-    // MARK: - Start Game with Random Word from Reach API
+    // MARK: - Start Game with Random Word from Reach API. Fetch Reach Data
     
     func startRocketManGame() {
         let difficulty = String(self.difficulty)
