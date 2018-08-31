@@ -1,7 +1,7 @@
 ## RocketMan
 A Hangman Game For People Who Like Space!!
 
-![Welcome Screen](https://github.com/bmanjuu/HPHangman/blob/master/HPHangmanWelcomeScreen.png)   ![Gameplay](https://github.com/bmanjuu/HPHangman/blob/master/HPHangmangGameScreen.png)
+![Welcome Screen](https://github.com/dennisvera/RocketMan/blob/master/Images/RocketMan1.png)   ![Gameplay](https://github.com/dennisvera/RocketMan/blob/master/Images/RocketMan2.png)
 
 ## Requirements
 This game is an iOS app that requires iOS 10.2+ to run. 
