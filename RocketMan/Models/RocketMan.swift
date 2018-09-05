@@ -84,12 +84,12 @@ class RocketMan: NSObject {
     // MARK: - Start Game with Random Word from Reach API. Fetch Reach Data
     
     func startRocketManGame() {
-        let difficulty = String(self.difficulty)
-        let wordMinLength = String(self.wordMinLength)
-        let wordMaxLength = String(self.wordMaxLength + 1)
-        
+        let difficulty = String("?difficulty=\(self.difficulty)")
+        let wordMinLength = String("&minLength=\(self.wordMinLength)")
+        let wordMaxLength = String("&maxLength=\(self.wordMaxLength + 1)")
+
         let urlString = "http://app.linkedin-reach.io/words?difficulty=\(difficulty)&minLength=\(wordMinLength)&maxLength=\(wordMaxLength)"
-        
+
         guard let url = URL(string: urlString) else { fatalError("Invalid URL") }
         
         let urlRequest = URLRequest(url: url)

@@ -43,7 +43,7 @@ class Game {
         self.difficulty = difficulty
         
         // Set Up Arrays For Selected Word
-        for letter in uppercasedWord.characters {
+        for letter in uppercasedWord {
             wordArray.append(letter)
             guessArray.append("_")
         }

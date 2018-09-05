@@ -51,7 +51,7 @@ final class GameSettingsViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GameViewController" {
+        if segue.identifier == GameViewController.reuseIdentifier {
             let destination = segue.destination as! GameViewController
             destination.rocketMan = rocketMan
         }        
@@ -64,19 +64,19 @@ final class GameSettingsViewController: UIViewController {
         rocketMan.startRocketManGame()
         
         // Wait for response from URL session
-        while (rocketMan.urlError == .waiting) { }
+        while rocketMan.urlError == .waiting { }
         // Check if there is an error in obtaining a word with the given parameters
-        if (rocketMan.urlError == .noWord) {
+        if rocketMan.urlError == .noWord {
             showAlert(with: "No Word Found", and: "Change difficulty or word length and try again.")
             return
             
             // Check if there is an error in reaching the server
-        } else if (rocketMan.urlError == .noResponse) {
+        } else if rocketMan.urlError == .noResponse {
             showAlert(with: "Unable to Fetch Word List Data", and: "Please make sure your device is connected over Wi-Fi or cellular.")
             return
         }
         
-        performSegue(withIdentifier: "GameViewController", sender: self)
+        performSegue(withIdentifier: GameViewController.reuseIdentifier, sender: self)
     }
     
 }

@@ -37,12 +37,12 @@ class GameWordView: UIView {
         }
     }
     
-    // MARK: - Drawing
+    // MARK: - Drawing Underscores and Game Word
     
     override func draw(_ rect: CGRect) {
         guard let word = word else { return }
-        if (word != "") {
-            let length = CGFloat(word.characters.count)
+        if !word.isEmpty {
+            let length = CGFloat(word.count)
             let spacing: CGFloat = 5.0
             let labelWidth: CGFloat = 20.0
             var margin = (self.frame.width - spacing * length - labelWidth * length) / 2

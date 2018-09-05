@@ -10,6 +10,10 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    // MARK: - Static Properties
+    
+    static let reuseIdentifier = "GameViewController"
+    
     // MARK: - Outlets
 
     @IBOutlet var gameBoardLabel: UILabel!
