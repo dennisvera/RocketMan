@@ -74,14 +74,16 @@ class GameViewController: UIViewController {
     
     private func processGame(_ game: Game.GameOutcome) {
         // Update game word
-        gameWordView.updateWord(rocketMan.currentGame!.guessArray)
+        guard let guessWord = rocketMan.currentGame?.guessArray else { return }
+        gameWordView.updateWord(guessWord)
         gameBoardLabel.text = "Guesses Left: " + String(rocketMan.remainingGuesses())
         updateAsteroidViews(rocketMan.remainingGuessesRatio())
         
         switch game {
         case .lossGuess:
             disableKeyboard()
-            gameWordView.fillWord(rocketMan.currentGame!.wordArray)
+            guard let gameWord = rocketMan.currentGame?.wordArray else { return }
+            gameWordView.fillWord(gameWord)
             gameBoardLabel.textColor = .red
             gameBoardLabel.backgroundColor = .white
             gameBoardLabel.layer.masksToBounds = true
@@ -122,13 +124,13 @@ class GameViewController: UIViewController {
     
     // MARK: - Sets Keyboard Button Color When Tapped
     @objc private func keyboardTapped(_ sender: KeyboardButton) {
-        let character = sender.key
+        guard let character = sender.key else { return }
         sender.isEnabled = false
         sender.alpha = 0.3
         sender.setTitleColor(UIColor.lightGray, for: .normal)
         
         do {
-            let gameOutcome = try rocketMan.guessLetter(character!)
+            let gameOutcome = try rocketMan.guessLetter(character)
             processGame(gameOutcome)
         } catch {
            print("No Game is Being Played")
