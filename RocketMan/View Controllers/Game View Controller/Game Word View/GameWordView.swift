@@ -40,8 +40,9 @@ class GameWordView: UIView {
     // MARK: - Drawing
     
     override func draw(_ rect: CGRect) {
-        if (word != nil) {
-            let length = CGFloat(word!.characters.count)
+        guard let word = word else { return }
+        if (word != "") {
+            let length = CGFloat(word.characters.count)
             let spacing: CGFloat = 5.0
             let labelWidth: CGFloat = 20.0
             var margin = (self.frame.width - spacing * length - labelWidth * length) / 2

@@ -110,11 +110,12 @@ class RocketMan: NSObject {
                 guard let data = data else { fatalError("Unable to get data: \(String(describing: error?.localizedDescription))") }
                 
                 // Split words into an array and access a random word in that array, passing it to start game
-                let words = String(data: data, encoding: .utf8)
-                let wordArray = words!.components(separatedBy: CharacterSet.newlines)
+                let dataResponse = String(data: data, encoding: .utf8)
+                guard let words = dataResponse else { return }
+                let wordArray = words.components(separatedBy: CharacterSet.newlines)
                 let index = Int(arc4random_uniform(UInt32(wordArray.count)))
                 let word = wordArray[index]
-                if (word != "") {
+                if word != "" {
                     self.urlError = nil
                     self.startGame(word, self.difficulty)
                 } else {
