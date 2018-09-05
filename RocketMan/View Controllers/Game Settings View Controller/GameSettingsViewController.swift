@@ -31,7 +31,7 @@ final class GameSettingsViewController: UIViewController {
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
     
         setupView()
     }
@@ -67,18 +67,17 @@ final class GameSettingsViewController: UIViewController {
         while rocketMan.urlError == .waiting { }
         // Check if there is an error in obtaining a word with the given parameters
         if rocketMan.urlError == .noWord {
-            showAlert(with: "No Word Found", and: "Change difficulty or word length and try again.")
+            showAlert(with: "No Word Found", and: "Change difficulty and/or word length and try again.")
             return
             
             // Check if there is an error in reaching the server
         } else if rocketMan.urlError == .noResponse {
-            showAlert(with: "Unable to Fetch Word List Data", and: "Please make sure your device is connected over Wi-Fi or cellular.")
+            showAlert(with: "Unable to Fetch Word Game Data", and: "Please make sure your device is connected over Wi-Fi or cellular.")
             return
         }
         
         performSegue(withIdentifier: GameViewController.reuseIdentifier, sender: self)
     }
-    
 }
 
 // MARK: - UITableView Data Source Extension

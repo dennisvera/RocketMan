@@ -37,8 +37,13 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         setupView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.rocketMan.clearGame()
     }
     
     // MARK: - View Methods
@@ -50,7 +55,8 @@ class GameViewController: UIViewController {
         setupAsteroids()
         
         // Game Word Print
-        print(rocketMan.currentGame!.word)
+        guard let gameWord = rocketMan.currentGame?.word else { return }
+        print(gameWord)
     }
     
     // MARK: - Helper Methods
@@ -137,7 +143,7 @@ class GameViewController: UIViewController {
             let gameOutcome = try rocketMan.guessLetter(character)
             processGame(gameOutcome)
         } catch {
-           print("No Game is Being Played")
+           print("No Game is Currently Being Played")
         }
     }
     

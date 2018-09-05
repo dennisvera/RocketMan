@@ -12,9 +12,8 @@ class RocketMan: NSObject {
     
     // MARK: - Enums
     
-    enum GameError : Error {
+    enum GameError: Error {
         case noCurrentGame
-        case invalidURL
     }
     
     enum URLError {
@@ -63,6 +62,12 @@ class RocketMan: NSObject {
         return false
     }
     
+    // MARK: - Clear current game
+    
+    func clearGame() {
+        currentGame = nil
+    }
+    
     // MARK: - Returns Number of Guesses Remaining
     
     func remainingGuesses() -> Int {
@@ -105,6 +110,7 @@ class RocketMan: NSObject {
             }
             
             if let error = error {
+                self.urlError = .noResponse
                 print("Unable To Fetch Reach Data: \(error)\n")
             } else {
                 guard let data = data else { fatalError("Unable to get data: \(String(describing: error?.localizedDescription))") }
