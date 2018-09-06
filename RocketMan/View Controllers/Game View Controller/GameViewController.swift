@@ -43,7 +43,7 @@ class GameViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
+
         print("\n rocketMan.currentGame?.word.count: \(String(describing: rocketMan.currentGame?.word.count)) \n")
         print("\n wordMinLength: \(rocketMan.wordMinimumLength) \n")
         print("\n wordMaxLength: \(rocketMan.wordMaximumLength) \n")

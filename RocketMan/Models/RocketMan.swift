@@ -62,19 +62,19 @@ class RocketMan: NSObject {
     // MARK: - Returns Number of Guesses Remaining
     
     func remainingGuesses() -> Int {
-//        guard let currentGameGuessMaximum = currentGame?.guessMaximum else { return 0 }
-//        guard let currentGameIncorrectGuessNumber = currentGame?.incorrectGuessNumber else { return 0 }
+        guard let currentGameGuessMaximum = currentGame?.guessMaximum else { return 0 }
+        guard let currentGameIncorrectGuessNumber = currentGame?.incorrectGuessNumber else { return 0 }
         
-        return currentGame!.guessMaximum - currentGame!.incorrectGuessNumber
+        return currentGameGuessMaximum - currentGameIncorrectGuessNumber
     }
     
     // MARK: - Returns Fraction Number of Guesses Remaining
     
     func remainingGuessesRatio() -> Double {
-//        guard let currentGameIncorrectGuessNumber = currentGame?.incorrectGuessNumber else { return 0 }
-//        guard let currentGameGuessMaximum = currentGame?.guessMaximum else { return 0 }
+        guard let currentGameIncorrectGuessNumber = currentGame?.incorrectGuessNumber else { return 0 }
+        guard let currentGameGuessMaximum = currentGame?.guessMaximum else { return 0 }
         
-        return Double(currentGame!.incorrectGuessNumber) / Double(currentGame!.guessMaximum)
+        return Double(currentGameIncorrectGuessNumber) / Double(currentGameGuessMaximum)
     }
     
     // MARK: - Start Game with Random Word from Reach API. Fetch Reach Data
