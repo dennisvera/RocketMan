@@ -36,13 +36,6 @@ final class GameSettingsViewController: UIViewController {
         setupView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
-        print("\n rocketMan.wordMinLength: \(rocketMan.wordMinimumLength) \n")
-        print("\n rocketMan.wordMaxLength: \(rocketMan.wordMaximumLength) \n")
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -72,6 +65,7 @@ final class GameSettingsViewController: UIViewController {
         
         // Wait for response from URL session
         while rocketMan.urlError == .waiting { }
+        
         // Check if there is an error in obtaining a word with the given parameters
         if rocketMan.urlError == .noWord {
             showAlert(with: "No Word Found", and: "The current settings could not produce a word. Change difficulty and/or word length and try again.")

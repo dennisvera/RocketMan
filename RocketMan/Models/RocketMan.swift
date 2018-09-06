@@ -64,7 +64,7 @@ class RocketMan: NSObject {
     func remainingGuesses() -> Int {
         guard let currentGameGuessMaximum = currentGame?.guessMaximum else { return 0 }
         guard let currentGameIncorrectGuessNumber = currentGame?.incorrectGuessNumber else { return 0 }
-        
+
         return currentGameGuessMaximum - currentGameIncorrectGuessNumber
     }
     
@@ -73,19 +73,19 @@ class RocketMan: NSObject {
     func remainingGuessesRatio() -> Double {
         guard let currentGameIncorrectGuessNumber = currentGame?.incorrectGuessNumber else { return 0 }
         guard let currentGameGuessMaximum = currentGame?.guessMaximum else { return 0 }
-        
+
         return Double(currentGameIncorrectGuessNumber) / Double(currentGameGuessMaximum)
     }
     
     // MARK: - Start Game with Random Word from Reach API. Fetch Reach Data
     
     func startRocketManGame() {
-        let difficulty = String("?difficulty=\(self.difficulty)")
-        let wordMinLength = String("&minLength=\(self.wordMinimumLength)")
-        let wordMaxLength = String("&maxLength=\(self.wordMaximumLength + 1)")
-
+        let difficulty = String(self.difficulty)
+        let wordMinLength = String(self.wordMinimumLength)
+        let wordMaxLength = String(self.wordMaximumLength + 1)
+        
         let urlString = "http://app.linkedin-reach.io/words?difficulty=\(difficulty)&minLength=\(wordMinLength)&maxLength=\(wordMaxLength)"
-
+        
         guard let url = URL(string: urlString) else { fatalError("Invalid URL") }
         
         let urlRequest = URLRequest(url: url)
@@ -107,9 +107,8 @@ class RocketMan: NSObject {
                 guard let data = data else { fatalError("Unable to get data: \(String(describing: error?.localizedDescription))") }
                 
                 // Split words into an array and access a random word in that array, passing it to start game
-                let dataResponse = String(data: data, encoding: .utf8)
-                guard let words = dataResponse else { return }
-                let wordArray = words.components(separatedBy: CharacterSet.newlines)
+                let words = String(data: data, encoding: .utf8)
+                let wordArray = words!.components(separatedBy: CharacterSet.newlines)
                 let index = Int(arc4random_uniform(UInt32(wordArray.count)))
                 let word = wordArray[index]
                 if word != "" {
@@ -142,11 +141,6 @@ class RocketMan: NSObject {
     }
     
 }
-
-
-
-
-
 
 
 
