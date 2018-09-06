@@ -23,10 +23,10 @@ final class GameSettingsViewController: UIViewController {
 
     var difficultyLabel: UILabel!
     var difficultyStepper: UIStepper!
-    var wordMinLengthLabel: UILabel!
-    var wordMinLengthStepper: UIStepper!
-    var wordMaxLengthLabel: UILabel!
-    var wordMaxLengthStepper: UIStepper!
+    var wordMinimumLengthLabel: UILabel!
+    var wordMinimumLengthStepper: UIStepper!
+    var wordMaximumLengthLabel: UILabel!
+    var wordMaximumLengthStepper: UIStepper!
     
     // MARK: - View Life Cycle
     
@@ -34,6 +34,13 @@ final class GameSettingsViewController: UIViewController {
         super.viewDidLoad()        
     
         setupView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        print("\n rocketMan.wordMinLength: \(rocketMan.wordMinimumLength) \n")
+        print("\n rocketMan.wordMaxLength: \(rocketMan.wordMaximumLength) \n")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -67,7 +74,7 @@ final class GameSettingsViewController: UIViewController {
         while rocketMan.urlError == .waiting { }
         // Check if there is an error in obtaining a word with the given parameters
         if rocketMan.urlError == .noWord {
-            showAlert(with: "No Word Found", and: "Change difficulty and/or word length and try again.")
+            showAlert(with: "No Word Found", and: "The current settings could not produce a word. Change difficulty and/or word length and try again.")
             return
             
             // Check if there is an error in reaching the server
@@ -117,22 +124,22 @@ extension GameSettingsViewController: UITableViewDataSource {
             cell.settingsStepper.value = Double(rocketMan.difficulty)
         case 1:
             cell.settingsTitleLabel.text = "Minimum Word Length"
-            cell.settingsNumberLabel.text = String(rocketMan.wordMinLength)
-            wordMinLengthLabel = cell.settingsNumberLabel
-            wordMinLengthStepper = cell.settingsStepper
+            cell.settingsNumberLabel.text = String(rocketMan.wordMinimumLength)
+            wordMinimumLengthLabel = cell.settingsNumberLabel
+            wordMinimumLengthStepper = cell.settingsStepper
             cell.settingsStepper.addTarget(self, action: #selector(wordMinimumLength(_:)), for: .allTouchEvents)
             cell.settingsStepper.maximumValue = 12
             cell.settingsStepper.minimumValue = 2
-            cell.settingsStepper.value = Double(rocketMan.wordMinLength)
+            cell.settingsStepper.value = Double(rocketMan.wordMinimumLength)
         case 2:
             cell.settingsTitleLabel.text = "Maximum Word Length"
-            cell.settingsNumberLabel.text = String(rocketMan.wordMaxLength)
-            wordMaxLengthLabel = cell.settingsNumberLabel
-            wordMaxLengthStepper = cell.settingsStepper
+            cell.settingsNumberLabel.text = String(rocketMan.wordMaximumLength)
+            wordMaximumLengthLabel = cell.settingsNumberLabel
+            wordMaximumLengthStepper = cell.settingsStepper
             cell.settingsStepper.addTarget(self, action: #selector(wordMaximumLength(_:)), for: .allTouchEvents)
             cell.settingsStepper.maximumValue = 12
             cell.settingsStepper.minimumValue = 2
-            cell.settingsStepper.value = Double(rocketMan.wordMaxLength)
+            cell.settingsStepper.value = Double(rocketMan.wordMaximumLength)
             
         default:
             break
@@ -151,28 +158,28 @@ extension GameSettingsViewController: UITableViewDataSource {
     // MARK: - Word Minimum Stepper Updates Word Minimum Legth Value
     @objc private func wordMinimumLength(_ sender: UIStepper) {
         let newWordMinimumLenghtValue = Int(sender.value)
-        wordMinLengthLabel.text = String(newWordMinimumLenghtValue)
-        rocketMan.wordMinLength = newWordMinimumLenghtValue
+        wordMinimumLengthLabel.text = String(newWordMinimumLenghtValue)
+        rocketMan.wordMinimumLength = newWordMinimumLenghtValue
         
         // Updates maximum word length if minimum word length exceeds it
-        if (newWordMinimumLenghtValue > rocketMan.wordMaxLength) {
-            wordMaxLengthLabel.text = String(newWordMinimumLenghtValue)
-            wordMaxLengthStepper.value = Double(newWordMinimumLenghtValue)
-            rocketMan.wordMaxLength = newWordMinimumLenghtValue
+        if newWordMinimumLenghtValue > rocketMan.wordMaximumLength {
+            wordMaximumLengthLabel.text = String(newWordMinimumLenghtValue)
+            wordMaximumLengthStepper.value = Double(newWordMinimumLenghtValue)
+            rocketMan.wordMaximumLength = newWordMinimumLenghtValue
         }
     }
     
     // MARK: - Word Maximum Stepper Updates Word Maximum Legth Value
     @objc private func wordMaximumLength(_ sender: UIStepper) {
         let newWordMaximumLenghtValue = Int(sender.value)
-        wordMaxLengthLabel.text = String(newWordMaximumLenghtValue)
-        rocketMan.wordMaxLength = newWordMaximumLenghtValue
+        wordMaximumLengthLabel.text = String(newWordMaximumLenghtValue)
+        rocketMan.wordMaximumLength = newWordMaximumLenghtValue
         
         // Updates minimum word length if maximum word length exceeds it
-        if (newWordMaximumLenghtValue < rocketMan.wordMinLength) {
-            wordMinLengthLabel.text = String(newWordMaximumLenghtValue)
-            wordMinLengthStepper.value = Double(newWordMaximumLenghtValue)
-            rocketMan.wordMinLength = newWordMaximumLenghtValue
+        if newWordMaximumLenghtValue < rocketMan.wordMinimumLength {
+            wordMinimumLengthLabel.text = String(newWordMaximumLenghtValue)
+            wordMinimumLengthStepper.value = Double(newWordMaximumLenghtValue)
+            rocketMan.wordMinimumLength = newWordMaximumLenghtValue
         }
     }
     

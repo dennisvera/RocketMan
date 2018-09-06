@@ -30,8 +30,8 @@ class RocketMan: NSObject {
     
     var guessMaximum: Int
     var difficulty: Int
-    var wordMinLength: Int
-    var wordMaxLength: Int
+    var wordMinimumLength: Int
+    var wordMaximumLength: Int
     var currentGame: Game?
     var urlError: URLError? = nil
     
@@ -40,26 +40,17 @@ class RocketMan: NSObject {
     override init() {
         self.guessMaximum = 6
         self.difficulty = 1
-        self.wordMinLength = 2
-        self.wordMaxLength = 12
+        self.wordMinimumLength = 2
+        self.wordMaximumLength = 12
         self.currentGame = nil
     }
     
     init(guessMaximum: Int, difficulty: Int, wordMinLength: Int, wordMaxLength: Int ) {
         self.guessMaximum = guessMaximum
         self.difficulty = difficulty
-        self.wordMinLength = wordMinLength
-        self.wordMaxLength = wordMaxLength
+        self.wordMinimumLength = wordMinLength
+        self.wordMaximumLength = wordMaxLength
         self.currentGame = nil
-    }
-    
-    // MARK: - Returns True if Game is Over, Otherwise False
-    
-    func isGameOver() -> Bool {
-        if let game = currentGame {
-            return game.gameOver
-        }
-        return false
     }
     
     // MARK: - Clear current game
@@ -71,27 +62,27 @@ class RocketMan: NSObject {
     // MARK: - Returns Number of Guesses Remaining
     
     func remainingGuesses() -> Int {
-        guard let currentGameGuessMaximum = currentGame?.guessMaximum else { return 0 }
-        guard let currentGameIncorrectGuessNumber = currentGame?.incorrectGuessNumber else { return 0 }
+//        guard let currentGameGuessMaximum = currentGame?.guessMaximum else { return 0 }
+//        guard let currentGameIncorrectGuessNumber = currentGame?.incorrectGuessNumber else { return 0 }
         
-        return currentGameGuessMaximum - currentGameIncorrectGuessNumber
+        return currentGame!.guessMaximum - currentGame!.incorrectGuessNumber
     }
     
     // MARK: - Returns Fraction Number of Guesses Remaining
     
     func remainingGuessesRatio() -> Double {
-        guard let currentGameGuessMaximum = currentGame?.guessMaximum else { return 0 }
-        guard let currentGameIncorrectGuessNumber = currentGame?.incorrectGuessNumber else { return 0 }
+//        guard let currentGameIncorrectGuessNumber = currentGame?.incorrectGuessNumber else { return 0 }
+//        guard let currentGameGuessMaximum = currentGame?.guessMaximum else { return 0 }
         
-        return Double(currentGameIncorrectGuessNumber) / Double(currentGameGuessMaximum)
+        return Double(currentGame!.incorrectGuessNumber) / Double(currentGame!.guessMaximum)
     }
     
     // MARK: - Start Game with Random Word from Reach API. Fetch Reach Data
     
     func startRocketManGame() {
         let difficulty = String("?difficulty=\(self.difficulty)")
-        let wordMinLength = String("&minLength=\(self.wordMinLength)")
-        let wordMaxLength = String("&maxLength=\(self.wordMaxLength + 1)")
+        let wordMinLength = String("&minLength=\(self.wordMinimumLength)")
+        let wordMaxLength = String("&maxLength=\(self.wordMaximumLength + 1)")
 
         let urlString = "http://app.linkedin-reach.io/words?difficulty=\(difficulty)&minLength=\(wordMinLength)&maxLength=\(wordMaxLength)"
 

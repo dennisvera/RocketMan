@@ -52,7 +52,7 @@ class Game {
     // MARK: - Returns True if Player Wins. Otherwise False
     
     func winGame() -> Bool {
-        if (revealedLetters == wordArray.count) {
+        if revealedLetters == wordArray.count {
             return true
         }
         return false
@@ -61,7 +61,7 @@ class Game {
     // MARK: - Returns True if Player Lost. Otherwise False
 
     func lossGame() -> Bool {
-        if (incorrectGuessNumber == guessMaximum) {
+        if incorrectGuessNumber == guessMaximum {
             return true
         }
         return false
@@ -76,7 +76,7 @@ class Game {
         // Already guessed
         if guessedLetters.contains(guess) { return .alreadyGuessed }
         
-        // Update guess stats, run through word with guess, and check if incorrect
+        // Update guess, run through word with guess, and check if incorrect
         guessNumber += 1
         guessedLetters.insert(guess)
         if !guessCheck(guess) {
@@ -99,28 +99,18 @@ class Game {
         return .correctGuess
     }
     
-    // MARK: - Selects Word With Guess And Updates The Guess Array. If The Guess is The Game Word, Return True
+    // MARK: - Selects Word With Guess And Updates the Guess Array. If the Guess is the Game Word, Return True
     
     private func guessCheck(_ guess: Character) -> Bool {
         var correctGuess = false
         for (index, letter) in wordArray.enumerated() {
-            if (letter == guess) {
+            if letter == guess {
                 correctGuess = true
                 guessArray[index] = letter
                 revealedLetters += 1
             }
         }
         return correctGuess
-    }
-    
-    // MARK: - Returns Character From GuessArray. Underscores Represent Letters of the Word That Have Not Yet Been Guessed
-    
-    func getCurrentGuess() -> String {
-        var charcterSelected = ""
-        for character in guessArray {
-            charcterSelected += String(character)
-        }
-        return charcterSelected
     }
     
 }
